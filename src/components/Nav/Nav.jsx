@@ -3,10 +3,10 @@ import header from '../../data/content';
 
 const Nav = () => {
     return (
-        <div className="">
-            <ul>
+        <div className={ styles.container }>
+            <ul className={ styles.list }>
                 {header.headerTop.nav?.map((item, index) => {
-                    return <li key={ index }>{ item }</li>
+                    return <li key={ index }><a href='#'>{ item }</a></li>
                 })}
             </ul>
         </div>

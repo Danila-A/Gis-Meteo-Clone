@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 
 const HeaderLogo = () => {
     return (
-        <div className="">
+        <div className={ styles.logo }>
             <Logo />
         </div>
     );

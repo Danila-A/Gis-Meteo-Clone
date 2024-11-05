@@ -7,3 +7,4 @@ In this project I get weather data using GisMeteo API.
 
 - [GisMeteo](https://github.com/vitejs/vite-plugin-react-swc)
 - [GisMeteo API](https://www.gismeteo.ru/api/)
+- https://ricktube.ru/watch/GJe0-oPbiqw

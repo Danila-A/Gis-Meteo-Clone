@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 
 const HeaderNav = () => {
     return (
-        <div className="">
+        <div className={ styles.nav }>
             <Nav />
         </div>
     );

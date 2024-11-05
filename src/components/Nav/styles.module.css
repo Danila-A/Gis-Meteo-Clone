@@ -1,0 +1,23 @@
+.container {
+    height: 30px;
+    padding-left: 20px;
+    border-left: 1px solid #0000001f;
+    display: flex;
+    align-items: center;
+}
+.list {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    color: #0099ff;
+    text-transform: capitalize;
+}
+.list>li {
+    margin-right: 20px;
+}
+.list>li:hover {
+    color: red;
+}
+.list>li:last-child {
+    margin-right: 0;
+}
