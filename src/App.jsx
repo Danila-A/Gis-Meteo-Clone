@@ -1,3 +1,6 @@
+import Header from "./components/Header/Header";
+
+
 const App = () => {
   return (
     <>
@@ -9,7 +12,7 @@ const App = () => {
 
         Тестовые данные: для начальной загрузки или тестирования интерфейса, пока ещё нет данных от сервера.
       */}
-      <p>Here will be the awesome GisMeteo clone</p>
+      <Header />
     </>
   )
 }
