@@ -1,4 +1,4 @@
-export const header = {
+const header = {
     headerTop: {
         logo: './logo.svg',
         nav: [
@@ -9,7 +9,7 @@ export const header = {
         ]    
     },
     headerBottom: {
-        searchPlaceHolder: 'поис местоположения',
+        searchPlaceHolder: 'поиск местоположения',
         timePoints: [
             'сейчас',
             'сегодня',
@@ -30,3 +30,5 @@ export const header = {
         ]
     }
 }
+
+export default header;
