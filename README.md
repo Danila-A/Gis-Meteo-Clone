@@ -1,8 +1,9 @@
-# React + Vite
+# GisMeteo Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is made by me(Danila) for learning and practicing frontend development.
+I use GisMeteo like a example to my project. 
+My project is created by React.js library.
+In this project I get weather data using GisMeteo API.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [GisMeteo](https://github.com/vitejs/vite-plugin-react-swc)
+- [GisMeteo API](https://www.gismeteo.ru/api/)
