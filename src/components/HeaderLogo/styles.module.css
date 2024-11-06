@@ -1,5 +1,5 @@
 .logo {
-    width: 150px;
+    min-width: 150px;
     display: flex;
     align-items: center;
     margin-right: 30px;

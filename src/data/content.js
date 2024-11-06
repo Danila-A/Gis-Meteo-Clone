@@ -9,7 +9,7 @@ const header = {
         ]    
     },
     headerBottom: {
-        searchPlaceHolder: 'поиск местоположения',
+        searchPlaceHolder: 'Поиск местоположения',
         timePoints: [
             'сейчас',
             'сегодня',

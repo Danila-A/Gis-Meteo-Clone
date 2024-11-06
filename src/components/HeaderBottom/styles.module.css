@@ -1,0 +1,9 @@
+.headerBottom {
+    background-color: #0099ff;
+}
+.inner {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}

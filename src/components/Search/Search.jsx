@@ -4,7 +4,7 @@ import header from '../../data/content';
 const Search = () => {
     return (
         <div className="">
-            <input type="text" placeholder={ header.headerBottom.searchPlaceHolder } />
+            <input className={ styles.input } type="text" placeholder={ header.headerBottom.searchPlaceHolder } />
         </div>
     );
 }

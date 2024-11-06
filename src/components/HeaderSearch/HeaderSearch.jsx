@@ -1,8 +1,9 @@
+import styles from './styles.module.css';
 import Search from "../Search/Search";
 
 const HeaderSearch = () => {
     return (
-        <div>
+        <div className={ styles.wrapper }>
             <Search />
         </div>
     );

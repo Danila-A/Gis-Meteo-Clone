@@ -4,8 +4,8 @@ import styles from './styles.module.css';
 
 const HeaderBottom = () => {
     return (
-        <div className="">
-            <div className="">
+        <div className={ styles.headerBottom}>
+            <div className={ styles.inner }>
                 <HeaderSearch />
                 <HeaderTimePointsList />
             </div>

@@ -1,0 +1,61 @@
+.wrapper {
+    display: flex;
+    height: 40px;
+    align-items: center;
+}
+.list {
+    display: flex;
+    color: white;
+}
+.listItem {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    flex-shrink: 0;
+}
+.listItem:last-child {
+    padding: 0;
+}
+.listItem>a {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.listItem:hover {
+    background-color: #40b3ff;
+}
+.sublistWrapper {
+    position: relative;
+}
+.sublistWrapper>div:first-child {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    cursor: pointer;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.sublist {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+    min-width: 150px;
+    border-radius: 0 0 6px 6px;
+    background-color: #0076bf;
+}
+.sublist>div {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-transform: capitalize;
+    font-size: 15px;
+}
+.sublist>div:hover {
+    background-color: #40b3ff;
+}
