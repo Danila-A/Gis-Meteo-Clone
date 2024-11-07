@@ -14,7 +14,7 @@ const HeaderTimePointsList = () => {
 
                 <li className={ styles.listItem }><a href='#'>{ header.headerBottom.others[0] }</a></li>
 
-                <li className={ styles.listItem }>
+                <li>
                     <HeaderBottomSubList />
                 </li>
                 

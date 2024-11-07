@@ -1,10 +1,10 @@
 import styles from './styles.module.css';
 import header from '../../data/content';
 
-const Search = () => {
+const Search = ({ onFocus }) => {
     return (
         <div className="">
-            <input className={ styles.input } type="text" placeholder={ header.headerBottom.searchPlaceHolder } />
+            <input onFocus={ onFocus } className={ styles.input } type="text" placeholder={ header.headerBottom.searchPlaceHolder } />
         </div>
     );
 }

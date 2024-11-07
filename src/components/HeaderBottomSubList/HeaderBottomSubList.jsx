@@ -30,7 +30,7 @@ const HeaderBottomSubList = () => {
     return (
         <div className={ styles.sublistWrapper }>
                         
-            <div className={ styles.listItem } ref={ ref } onClick={ handleClick }>Ещё<div className={ styles.arrow }><Arrow /></div></div>
+            <div className={ styles.moreButton } ref={ ref } onClick={ handleClick }>Ещё<div className={ styles.arrow }><Arrow /></div></div>
 
             {isVisible && <div className={ styles.sublist }>
                 { header.headerBottom.more?.map((item, index) => {
