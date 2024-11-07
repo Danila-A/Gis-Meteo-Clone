@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import styles from './search.module.css';
 import header from '../../data/content';
 import { forwardRef } from 'react';
 
