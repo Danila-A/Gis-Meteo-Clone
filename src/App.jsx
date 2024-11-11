@@ -1,13 +1,9 @@
-import { useEffect } from "react";
 import Header from "./components/Header/Header";
 import { getWether } from "./scripts/api/getWether";
 
-
 const App = () => {
 
-  useEffect(() => {
-    getWether();
-  }, [])
+  getWether();  
 
   return (
     <>
