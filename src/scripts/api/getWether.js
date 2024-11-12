@@ -1,18 +1,7 @@
 import axios from "axios";
+import { fetchWeatherApi } from "openmeteo";
 
-export async function  getWether() {
-
-    // const configuration = {
-    //     baseURL: 'https://api.gismeteo.net/v2/weather/current/4368/',
-    //     headers: {
-    //         'X-Gismeteo-Token': '56b30cb255.3443075',
-    //         'Accept-Encoding': 'deflate, gzip',
-    //     },
-    //     params: {
-    //         lang: 'en'
-    //     }
-    // }
-
+export async function getWetherAxios() {
     const configuration = {
         baseURL: 'https://api.open-meteo.com/v1/forecast',
         params: {
@@ -26,9 +15,20 @@ export async function  getWether() {
 
     try {
         const response = await apiRequest.get();
-        console.log(response);
+        return response.data;
     }
     catch(error) {
         console.error(error);
     }
+}
+
+export async function getWetherOpenMeteo() {
+    const params = {
+      "latitude": 52.52,
+      "longitude": 13.41,
+      "hourly": "temperature_2m"
+    };
+    const url = "https://api.open-meteo.com/v1/forecast";
+    const responses = await fetchWeatherApi(url, params); 
+    return responses[0];
 }
