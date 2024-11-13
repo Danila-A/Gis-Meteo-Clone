@@ -4,17 +4,7 @@ import useFetch from "./scripts/hooks/useFetch";
 
 const App = () => {
 
-  const data = useFetch();
-
-  // Используя геокодирования от Google Maps API
-  // data ? console.log("latitude: " + data.latitude) : null;
-  // data ? console.log("longitude: " + data?.longitude) : null;
-  // data ? console.log("elevation: " + data?.elevation) : null;
-  // data ? console.log("generationtime_ms: " + data?.generationtime_ms) : null;
-  // data ? console.log("utc_offset_seconds: " + data?.utc_offset_seconds) : null;
-  // data ? console.log("timezone: " + data?.timezone) : null;
-  // data ? console.log("timezone_abbreviation: " + data?.timezone_abbreviation) : null;
-
+  const data = useFetch('Москва');
   
   return (
     <>
