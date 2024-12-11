@@ -1,25 +1,19 @@
 import { useEffect, useState } from "react"
-import { getLocation, getWetherAxios, getWetherOpenMeteo } from "../api/getWether";
+import { getTestWeather } from "../api/getWether";
 
-const useFetch = (place) => {
+const useFetch = (place, setIsLoading) => {
     const [data, setData] = useState(null);
-    const [location, setLocation] = useState(null);
-  
+      
     useEffect(()=>{
       (async () => {
-        const response = await getLocation(place);
-        setLocation(response);
-      })(); 
-    },[]);
-
-    useEffect(() => {
-      (async () => {
-        const response = await getWetherAxios(location.data[0].latitude, location.data[0].longitude);
+        setIsLoading(true);
+        const response = await getTestWeather(place);
         setData(response);
+        setIsLoading(false);
       })(); 
-    },[location]);
+    },[place]);
 
-    return data;
+    if (data) return data.data;
 }
 
 export default useFetch;

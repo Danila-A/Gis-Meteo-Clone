@@ -3,15 +3,14 @@ import Search from "../Search/Search";
 import { useEffect, useRef, useState } from 'react';
 import useFetch from '../../scripts/hooks/useFetch';
 
-const HeaderSearch = () => {
+const HeaderSearch = ({ setData }) => {
+      
     const [isFocus, setIsFocus] = useState(false);
-    const [data, setData] = useState(null);
-
+    const searchRef = useRef();
+    
     const handleOnFocus = () => {
         setIsFocus(true);
     }
-
-    const searchRef = useRef();
 
     useEffect(()=> {
         const handler = (event) => {
@@ -29,8 +28,11 @@ const HeaderSearch = () => {
     }, [searchRef])
 
     const handleSubmit = (event) => {
-        // event.preventDefault();
-        // const location = ;
+        event.preventDefault();
+
+        const location = searchRef.current.value;
+        setIsFocus(false); 
+        searchRef.current.blur();      
         setData(location);
     }
 
@@ -38,12 +40,15 @@ const HeaderSearch = () => {
         <>
             <div className={ styles.wrapper }>
                 <div className={ styles.search } style={ isFocus ? { minWidth: '400px' } : null}>
-                    <Search ref={ searchRef } onFocus={ handleOnFocus } onSubmit={ handleSubmit }/>  
+                    <Search 
+                        ref={ searchRef } 
+                        onFocus={ handleOnFocus } 
+                        onSubmit={ handleSubmit }
+                    />  
                 </div>
             </div>
             <div className={ styles.backbround } style={ isFocus ? { opacity: 1, zIndex: 2} : null}></div>
         </>
-        
     );
 }
 

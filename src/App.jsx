@@ -1,10 +1,12 @@
-import { fetchWeatherApi, timezone } from "openmeteo";
 import Header from "./components/Header/Header";
 import useFetch from "./scripts/hooks/useFetch";
+import { useState } from "react";
 
 const App = () => {
+  const [data, setData] = useState('moscow');
+  const [isLoading, setIsLoading] =useState(true);
 
-  const data = useFetch('Москва');
+  const weatherData = useFetch(data, setIsLoading);
   
   return (
     <>
@@ -16,15 +18,21 @@ const App = () => {
 
         Тестовые данные: для начальной загрузки или тестирования интерфейса, пока ещё нет данных от сервера.
       */}
-      <Header />
+      <Header data={ data } setData={ setData }/>
 
-      <p>{ "latitude: " + data?.latitude }</p>
-      <p>{ "longitude: " + data?.longitude }</p>
-      <p>{ "elevation: " + data?.elevation }</p>
-      <p>{ "generationtime_ms: " + data?.generationtime_ms}</p>
-      <p>{ "utc_offset_seconds: " + data?.utc_offset_seconds }</p>
-      <p>{ "timezone: " + data?.timezone }</p>
-      <p>{ "timezone_abbreviation: " + data?.timezone_abbreviation }</p>
+      {isLoading ? 
+        <p>Loading</p>
+        :
+        <>
+          <h1>{ weatherData.location.name }</h1>
+          <p>Температура: {weatherData.current.temp_c }</p>
+          <p>Ощущается как: { weatherData.current.feelslike_c }</p>
+          <p>Скорость верта: { weatherData.current.wind_kph } км/ч</p>
+          <p>Направление ветра: { weatherData.current.wind_dir }</p>
+          <p>Количество осадков: { weatherData.current.precip_mm } мм</p>
+        </>
+      }
+      
     </>
   )
 }
