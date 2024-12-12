@@ -1,12 +1,15 @@
 import HeaderBottom from "../HeaderBottom/HeaderBottom";
 import HeaderTop from "../HeaderTop/HeaderTop";
 
-const Header = ({ data, setData }) => {
+const Header = ({ setData, weatherData }) => {
     return (
         <header>
             <div>
                 <HeaderTop />
-                <HeaderBottom data={ data } setData={ setData }/>
+                <HeaderBottom 
+                    setData={ setData }
+                    weatherData={ weatherData }
+                />
             </div>
         </header>
     );

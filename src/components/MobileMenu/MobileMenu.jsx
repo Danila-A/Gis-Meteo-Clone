@@ -1,16 +1,18 @@
-import styles from './styles.module.css';
 import header from '../../data/content';
+import CloseIcon from '../../icons/CloseIcon/CloseIcon';
+import styles from './MobileMenu.module.css';
 
-const HeaderTimePointsList = ({ weatherData }) => {
+const MobileMenu = ({ weatherData, setIsVisible }) => {
 
     const handleClick = (event) => {
         console.log(event.target.getAttribute('data-date'));
     }
 
     return (
-        <div className={ styles.wrapper }>
-            <ul className={ styles.list }>
-
+    <div className={ styles.menu }>
+        <div className={ styles.inner }>
+            <CloseIcon  setIsVisible={ setIsVisible }/>
+            <ul>
                 {weatherData ? (header.headerBottom.timePoints?.map((item, index) => {
                     return (
                         <li 
@@ -23,10 +25,11 @@ const HeaderTimePointsList = ({ weatherData }) => {
                                 </a>
                         </li>
                     );
-                })) : null }             
+                })) : null }
             </ul>
         </div>
-    );
+    </div>
+    )
 }
 
-export default HeaderTimePointsList;
+export default MobileMenu

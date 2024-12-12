@@ -1,0 +1,9 @@
+.closeIcon {
+    display: flex;
+    width: 100%;
+    justify-content: start;
+}
+.closeIcon > img {
+    width: 32px;
+    height: 32px;
+}

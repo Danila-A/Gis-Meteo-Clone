@@ -6,7 +6,7 @@ export async function getTestWeather(city) {
         params: {
             key: '0d65cb3ac45940d289a191409241112',
             q: city,
-            days: 2,
+            days: 7,
         }
     }
 

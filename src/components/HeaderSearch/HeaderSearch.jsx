@@ -1,7 +1,6 @@
 import styles from './styles.module.css';
 import Search from "../Search/Search";
 import { useEffect, useRef, useState } from 'react';
-import useFetch from '../../scripts/hooks/useFetch';
 
 const HeaderSearch = ({ setData }) => {
       
@@ -32,14 +31,16 @@ const HeaderSearch = ({ setData }) => {
 
         const location = searchRef.current.value;
         setIsFocus(false); 
+        
+        searchRef.current.value = '';
         searchRef.current.blur();      
-        setData(location);
+        location && location.trim() ? setData(location) : null;
     }
 
     return (
         <>
             <div className={ styles.wrapper }>
-                <div className={ styles.search } style={ isFocus ? { minWidth: '400px' } : null}>
+                <div className={ styles.search } style={ isFocus && window.innerWidth > 430 ? { minWidth: '400px' } : null}>
                     <Search 
                         ref={ searchRef } 
                         onFocus={ handleOnFocus } 
