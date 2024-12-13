@@ -5,23 +5,23 @@ import styles from './MobileMenu.module.css';
 const MobileMenu = ({ weatherData, setIsVisible }) => {
 
     const handleClick = (event) => {
-        console.log(event.target.getAttribute('data-date'));
+        console.log(event.target.getAttribute('data-value'));
     }
 
     return (
     <div className={ styles.menu }>
         <div className={ styles.inner }>
             <CloseIcon  setIsVisible={ setIsVisible }/>
-            <ul>
-                {weatherData ? (header.headerBottom.timePoints?.map((item, index) => {
+            <ul className={ styles.menuList }>
+                {weatherData ? (header.headerBottom.forecastPoints?.map((point, index) => {
                     return (
                         <li 
                             className={ styles.listItem } 
                             key={ index }>
                                 <a 
-                                    data-date={ weatherData.forecast.forecastday[index].date }
+                                    data-value={ point.value }
                                     onClick={(event) => handleClick(event)}>
-                                        { item }
+                                        { point.text }
                                 </a>
                         </li>
                     );

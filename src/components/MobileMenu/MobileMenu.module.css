@@ -13,13 +13,18 @@
     text-align: right;
     background-color: #0099ff;
 }
+.menuList {
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 70%;
+}
 .listItem {
     color: #ffffff;
     text-transform: uppercase;
     font-weight: 700;
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-right: 25px;
+    padding-right: 5px;
 }
 .listItem:first-child {
     padding-top: 10px;

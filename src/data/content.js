@@ -7,15 +7,28 @@ const header = {
     },
     headerBottom: {
         searchPlaceHolder: 'Поиск местоположения',
-        timePoints: [
-            'сегодня',
-            'завтра',
-            '3-й день',
-            '4-й день',
-            '5-й день',
-            '6-й день',
-            '7-й день'
-        ],
+        forecastPoints: [
+            {
+                text: 'сегодня',
+                value: 1,
+            },
+            {
+                text: 'завтра',
+                value: 2,
+            },
+            {
+                text: '3 дня',
+                value: 3,
+            },
+            {
+                text: '7 дней',
+                value: 7,
+            },
+            {
+                text: '2 недели',
+                value: 14,
+            }
+        ]
     }
 }
 const boyd = {

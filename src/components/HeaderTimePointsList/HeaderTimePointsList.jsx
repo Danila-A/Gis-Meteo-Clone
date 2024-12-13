@@ -4,22 +4,22 @@ import header from '../../data/content';
 const HeaderTimePointsList = ({ weatherData }) => {
 
     const handleClick = (event) => {
-        console.log(event.target.getAttribute('data-date'));
+        console.log(event.target.getAttribute('data-value'));
     }
 
     return (
         <div className={ styles.wrapper }>
             <ul className={ styles.list }>
 
-                {weatherData ? (header.headerBottom.timePoints?.map((item, index) => {
+                {weatherData ? (header.headerBottom.forecastPoints?.map((point, index) => {
                     return (
                         <li 
                             className={ styles.listItem } 
                             key={ index }>
                                 <a 
-                                    data-date={ weatherData.forecast.forecastday[index].date }
+                                    data-value={ point.value }
                                     onClick={(event) => handleClick(event)}>
-                                        { item }
+                                        { point.text }
                                 </a>
                         </li>
                     );
