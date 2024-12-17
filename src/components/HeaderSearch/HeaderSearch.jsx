@@ -2,20 +2,21 @@ import styles from './styles.module.css';
 import Search from "../Search/Search";
 import { useEffect, useRef, useState } from 'react';
 
-const HeaderSearch = ({ setData }) => {
-      
+const HeaderSearch = ({ setData, body }) => {
     const [isFocus, setIsFocus] = useState(false);
-    const searchRef = useRef();
-    
+    const searchRef = useRef();   
+
     const handleOnFocus = () => {
         setIsFocus(true);
-    }
+        body.style.overflow = 'hidden';
+    }   
 
     useEffect(()=> {
         const handler = (event) => {
 
             if(searchRef.current != event.target) {
                 setIsFocus(false);
+                body.style.overflow = 'visible';
             }
         }
 

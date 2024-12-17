@@ -1,7 +1,7 @@
 import HeaderBottom from "../HeaderBottom/HeaderBottom";
 import HeaderTop from "../HeaderTop/HeaderTop";
 
-const Header = ({ setData, weatherData }) => {
+const Header = ({ setData, weatherData, setKindForecast }) => {
     return (
         <header>
             <div>
@@ -9,6 +9,7 @@ const Header = ({ setData, weatherData }) => {
                 <HeaderBottom 
                     setData={ setData }
                     weatherData={ weatherData }
+                    setKindForecast={ setKindForecast }
                 />
             </div>
         </header>

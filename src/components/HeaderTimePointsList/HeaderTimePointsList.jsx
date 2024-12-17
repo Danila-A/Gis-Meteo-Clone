@@ -1,10 +1,10 @@
 import styles from './styles.module.css';
 import header from '../../data/content';
 
-const HeaderTimePointsList = ({ weatherData }) => {
+const HeaderTimePointsList = ({ weatherData, setKindForecast }) => {
 
     const handleClick = (event) => {
-        console.log(event.target.getAttribute('data-value'));
+        setKindForecast(event.target.getAttribute('data-value'));
     }
 
     return (
@@ -18,7 +18,7 @@ const HeaderTimePointsList = ({ weatherData }) => {
                             key={ index }>
                                 <a 
                                     data-value={ point.value }
-                                    onClick={(event) => handleClick(event)}>
+                                    onClick={(event) => handleClick(event)} >
                                         { point.text }
                                 </a>
                         </li>

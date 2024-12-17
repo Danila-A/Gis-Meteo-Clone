@@ -1,4 +1,4 @@
-const header = {
+const app = {
     headerTop: {
         logo: './logo.svg',
         nav: [
@@ -10,11 +10,11 @@ const header = {
         forecastPoints: [
             {
                 text: 'сегодня',
-                value: 1,
+                value: 0,
             },
             {
                 text: 'завтра',
-                value: 2,
+                value: 1,
             },
             {
                 text: '3 дня',
@@ -29,13 +29,25 @@ const header = {
                 value: 14,
             }
         ]
+    },
+    body : {
+        dateTitle: 'погода на ',
+        temperature: 'температура воздуха в °C',
+        daysOfWeek: [
+            'вс',
+            'пн',
+            'вт',
+            'ср',
+            'чт',
+            'пт',
+            'сб',
+        ],
+        card: {
+            temperature: '°C',
+            windSpeed: 'м/с',
+            precipitation: 'мм'
+        }
     }
 }
-const boyd = {
-    title: 'погода на ',
-    temperature: 'температура воздуха в °C',
-    windSpeed: 'порывы ветра',
-    precipitation: 'количетво осадков'
-}
 
-export default header;
+export default app;
