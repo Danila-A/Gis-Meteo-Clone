@@ -4,7 +4,7 @@ import header from '../../data/content';
 const HeaderTimePointsList = ({ weatherData, setKindForecast }) => {
 
     const handleClick = (event) => {
-        setKindForecast(event.target.getAttribute('data-value'));
+        setKindForecast(Number(event.target.getAttribute('data-value')));
     }
 
     return (

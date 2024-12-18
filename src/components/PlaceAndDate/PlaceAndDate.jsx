@@ -5,7 +5,7 @@ const PlaceAndDate = ({ date, city }) => {
   return (
     <div className={ styles.placeAndDate }>
         <h3 className={ styles.date }>
-            { app.body.dateTitle } { date.split(' ')[0] }
+            { app.body.dateTitle } { date }
         </h3>
         <h1>{ city }</h1>
     </div>

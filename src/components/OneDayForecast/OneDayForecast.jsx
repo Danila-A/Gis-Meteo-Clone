@@ -1,8 +1,7 @@
 import styles from './OneDayForecast.module.css';
-import app from '../../data/content'
 import ForecastCard from '../ForecastCard/ForecastCard';
 
-const OneDayForecast = ({ hourList, kindForecast }) => {
+const OneDayForecast = ({ hourList }) => {
   return (
     <div>
         <div className={ styles.inner } >

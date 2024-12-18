@@ -1,12 +1,17 @@
 import styles from './ForecastCard.module.css';
 import app from '../../data/content'
 
-const ForecastCard = ({ item }) => {
+const ForecastCard = ({ item, dayTime=null }) => {
     return (
     <div className={ styles.card } >
         <div className={ styles.inner }>
+
             <div className={ styles.title }>
-                <p>{ item.time.split(' ')[1] }</p>
+                { dayTime ?
+                    <p>{ dayTime }</p>
+                    :
+                    <p>{ item.time.split(' ')[1] }</p>
+                }
                 <p></p>
             </div>
             <div>
@@ -21,6 +26,7 @@ const ForecastCard = ({ item }) => {
             <div className={ styles.precipitation }>
                 <p>{ item.precip_mm } { app.body.card.precipitation }</p>
             </div>
+
         </div>
     </div>
     )

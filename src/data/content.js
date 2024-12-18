@@ -46,7 +46,13 @@ const app = {
             temperature: '°C',
             windSpeed: 'м/с',
             precipitation: 'мм'
-        }
+        },
+        dayTime: [
+            'ночь',
+            'утро',
+            'день',
+            'вечер'
+        ]
     }
 }
 
