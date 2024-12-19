@@ -5,11 +5,9 @@ import styles from './MobileMenu.module.css';
 const MobileMenu = ({ weatherData, setIsVisible, setKindForecast, root }) => {
 
     const handleClick = (event) => {
-        setKindForecast(event.target.getAttribute('data-value'));
-        // console.log(root);
-        // root.style.overflow = 'visible';
+        setKindForecast(Number(event.target.getAttribute('data-value')));
         setIsVisible(false);
-
+        root.style.overflow = 'visible';
     }
 
 

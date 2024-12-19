@@ -1,15 +1,18 @@
 .card {
     flex-grow: 1;
-    flex-shrink: 0;
+    flex-shrink: 1;
     flex-basis: 10%;
+    margin-right: 5px;
+}
+.card:last-child {
+    margin-right: 0;
 }
 .inner {
     display: flex;
     flex-direction: column; 
     align-items: center;
     border-radius: 10px;
-    box-shadow: 0 10px 5px #00000033,
-                0 0 5px #00000033;
+    box-shadow: 0 0 5px #00000033;
 }
 .inner>div {
     width: 100%;
@@ -41,6 +44,11 @@
 @media (max-width: 600px) {
     .card {
         flex-basis: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+    .card:last-child {
+        margin-bottom: 0;
     }
     .inner {
         flex-direction: row;
@@ -50,8 +58,26 @@
     .inner>div {
         margin-bottom: 0;
     }
+    .icon {
+        flex-basis: 20%;
+        flex-shrink: 1;
+        flex-grow: 0;
+    }
+    .icon>img {
+        width: 40px;
+        height: 40px;
+    }
     .temperature {
         border: 1px solid #00a4ff;
         border-radius: 10px;
+        font-size: 12px;
+    }
+    .inner,
+    .title,
+    .temperature,
+    .windSpeed,
+    .precipitation {
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 }

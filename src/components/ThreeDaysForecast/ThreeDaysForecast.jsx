@@ -14,7 +14,7 @@ const ThreeDaysForecast = ({ threeDays }) => {
 
     return (
     <div>
-        <div className="" style={{ display: 'flex'}}>
+        <div className={ styles.inner } >
             {
                 filteredThreeDays.map((item, index) => {
                     return (

@@ -3,21 +3,19 @@ import app from '../../data/content';
 import ForecastCard from '../ForecastCard/ForecastCard';
 
 const ThreeDaysForecastBlock = ({ day }) => {
-
-  console.log(day);
-
   return (
-    <div style={{flexGrow: 1, marginRight: '10px'}}>
-      <div className="">
+    <div className={ styles.container } >
+      <div>
 
-        <div className="">
+        <div className={ styles.title }>
           <h3>{ app.body.daysOfWeek[new Date(day.date).getDay()] + ' ' + day.date }</h3>
         </div>
 
-        <div className="" style={{ display: 'flex'}}>
+        <div className={ styles.data } >
           { day.hour.map((item, index) => {
             return (
               <ForecastCard 
+                key={ index }
                 item={ item } 
                 dayTime={ app.body.dayTime[index] }
               />

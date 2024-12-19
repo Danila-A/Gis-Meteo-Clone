@@ -11,6 +11,7 @@ const OneDayForecast = ({ hourList }) => {
                     <ForecastCard 
                         key={ index } 
                         item= { item }
+                        oneDay
                     />
                 );
             }))}
