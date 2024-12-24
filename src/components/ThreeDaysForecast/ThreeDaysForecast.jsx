@@ -1,22 +1,12 @@
 import ThreeDaysForecastBlock from '../ThreeDaysForecastBlock/ThreeDaysForecastBlock';
 import styles from './ThreeDaysForecast.module.css';
 
-const ThreeDaysForecast = ({ threeDays }) => {
-
-    const filteredThreeDays = threeDays.map((item) => {
-        return (
-            {
-                ...item,
-                hour: item.hour.filter((_, index) => index % 6 === 0)
-            }
-        )
-    })
-
+const ThreeDaysForecast = ({ forecast }) => {
     return (
     <div>
         <div className={ styles.inner } >
             {
-                filteredThreeDays.map((item, index) => {
+                forecast.map((item, index) => {
                     return (
                         <ThreeDaysForecastBlock 
                             key={ index }    

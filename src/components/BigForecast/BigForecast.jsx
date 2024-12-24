@@ -5,11 +5,11 @@ const BigForecast = ({ forecast }) => {
   return (
     <div>
         <div className={ styles.inner } >
+          
             { forecast.map((item, index) => (
                 <ForecastCard 
                     key={ index }
                     item={ item } 
-                    bigforecast
                 />    
             ))}
             

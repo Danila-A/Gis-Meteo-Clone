@@ -8,16 +8,15 @@ const ThreeDaysForecastBlock = ({ day }) => {
       <div>
 
         <div className={ styles.title }>
-          <h3>{ app.body.daysOfWeek[new Date(day.date).getDay()] + ' ' + day.date }</h3>
+          { day[0].date }
         </div>
 
         <div className={ styles.data } >
-          { day.hour.map((item, index) => {
+          { day.map((item, index) => {
             return (
               <ForecastCard 
                 key={ index }
                 item={ item } 
-                dayTime={ app.body.dayTime[index] }
               />
             )
           })}
