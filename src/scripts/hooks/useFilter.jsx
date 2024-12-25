@@ -1,4 +1,5 @@
 import app from '../../data/content'
+import { reformatDate } from '../helpers/reformatDate';
 
 export const useFilter = (weatherData, kindForecast) => {
 
@@ -7,7 +8,7 @@ export const useFilter = (weatherData, kindForecast) => {
         const list = weatherData.forecast.forecastday[kindForecast].hour.filter((_, index) => index % 3 === 0);
 
         return {
-            dates: weatherData.forecast.forecastday[kindForecast].date,
+            dates: reformatDate(weatherData.forecast.forecastday[kindForecast].date),
             city: weatherData.location.name,   
             hourList: list.map((item) => (
                 {
@@ -48,56 +49,6 @@ export const useFilter = (weatherData, kindForecast) => {
                         }
                     ))
                 
-            )),
-        }
-    }
-    if (kindForecast === 7) {
-        const list = weatherData.forecast.forecastday.filter((_, index) => index < 7);
-
-        return {
-            dates: '7 дней',
-            city: weatherData.location.name,   
-            hourList: list.map((item) => (
-                {
-                    title: 
-                        <>
-                            <p>{ app.body.daysOfWeek[new Date(item.date).getDay()] }</p>
-                            <p>{ item.date.split('-')[item.date.split('-').length - 1] }</p>
-                        </>,
-                    icon: <img src={ item.day.condition.icon } alt="icon" />,
-                    temperature: 
-                        <>
-                            <p>{item.day.maxtemp_c} { app.body.card.temperature }</p>
-                            <p>{item.day.mintemp_c} { app.body.card.temperature }</p>
-                        </>,
-                    windSpeed: <p>{ Math.floor(item.day.maxwind_kph / 3.6) } { app.body.card.windSpeed }</p>,
-                    precipitation: <p>{ item.day.totalprecip_mm } { app.body.card.precipitation }</p>,
-                }
-            )),
-        }
-    }
-    if (kindForecast === 14) {
-        const list = weatherData.forecast.forecastday.filter((item, index) => item);
-
-        return {
-            dates: '2 недели',
-            city: weatherData.location.name,   
-            hourList: list.map((item) => (
-                {
-                    title: 
-                        <>
-                            <p>{ app.body.daysOfWeek[new Date(item.date).getDay()] }</p>
-                            <p>{ item.date.split('-')[item.date.split('-').length - 1] }</p>
-                        </>,
-                    icon: <img src={ item.day.condition.icon } alt="icon" />,
-                    temperature: 
-                        <>
-                            <p>{item.day.maxtemp_c} { app.body.card.temperature }</p>
-                            <p>{item.day.mintemp_c} { app.body.card.temperature }</p>
-                        </>,
-                    windSpeed: <p>{ Math.floor(item.day.maxwind_kph / 3.6) } { app.body.card.windSpeed }</p>,
-                    precipitation: <p>{ item.day.totalprecip_mm } { app.body.card.precipitation }</p>,
-                }
             )),
         }
     }
