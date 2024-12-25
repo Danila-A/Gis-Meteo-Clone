@@ -2,7 +2,7 @@ import Header from "./components/Header/Header";
 import MainContainer from "./components/MainContainer/MainContainer";
 import { useFilter }  from "./scripts/hooks/useFilter";
 import useFetch from "./scripts/hooks/useFetch";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const App = () => {
   const [data, setData] = useState('Москва');
@@ -17,13 +17,6 @@ const App = () => {
 
   weatherData ? console.log(useFilter(weatherData, kindForecast)) : null;
   
-
-  // console.log(kindForecast);
-
-  useEffect(() => {
-    setKindForecast(0);
-  }, [data]);
-
   return (
     <>
       {/* 

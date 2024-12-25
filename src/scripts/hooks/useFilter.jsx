@@ -38,16 +38,20 @@ export const useFilter = (weatherData, kindForecast) => {
             city: weatherData.location.name,   
             hourList: filteredThreeDays.map((item) => (
                  
-                    item.hour.map((day) => (
-                        {
-                            date: <h3>{ app.body.daysOfWeek[new Date(item.date).getDay()] + ' ' + item.date }</h3>,
-                            title: <p>{ day.time.split(' ')[1] }</p>,
-                            icon: <img src={ day.condition.icon } alt="icon" />,
-                            temperature: <p>{day.temp_c} { app.body.card.temperature }</p>,
-                            windSpeed: <p>{ Math.floor(day.wind_kph / 3.6) } { app.body.card.windSpeed }</p>,
-                            precipitation: <p>{ day.precip_mm } { app.body.card.precipitation }</p>,
-                        }
-                    ))
+                item.hour.map((day) => (
+                    {
+                        date: (
+                                <h3 style={new Date(item.date).getDay() === 0 || new Date(item.date).getDay() === 6 ? { color: 'red'} : null}>
+                                    { app.body.daysOfWeek[new Date(item.date).getDay()] + ' ' + item.date }
+                                </h3>
+                            ),
+                        title: <p>{ day.time.split(' ')[1] }</p>,
+                        icon: <img src={ day.condition.icon } alt="icon" />,
+                        temperature: <p>{day.temp_c} { app.body.card.temperature }</p>,
+                        windSpeed: <p>{ Math.floor(day.wind_kph / 3.6) } { app.body.card.windSpeed }</p>,
+                        precipitation: <p>{ day.precip_mm } { app.body.card.precipitation }</p>,
+                    }
+                ))
                 
             )),
         }

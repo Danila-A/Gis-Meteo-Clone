@@ -20,14 +20,6 @@ const app = {
                 text: '3 дня',
                 value: 3,
             },
-            {
-                text: '7 дней',
-                value: 7,
-            },
-            {
-                text: '2 недели',
-                value: 14,
-            }
         ]
     },
     body : {
