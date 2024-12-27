@@ -33,14 +33,13 @@ const App = () => {
         setKindForecast={ setKindForecast }
       />
 
-      {isLoading ? 
-        <p>Loading</p>
-        :
-        <MainContainer 
-          weatherData={ filteredWeatherData } 
-          kindForecast={ kindForecast }  
-        />
-      }
+
+      <MainContainer 
+        weatherData={ filteredWeatherData } 
+        kindForecast={ kindForecast } 
+        isLoading={ isLoading } 
+      />
+      
     </>
   )
 }

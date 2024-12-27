@@ -3,6 +3,8 @@ import PlaceAndDate from '../PlaceAndDate/PlaceAndDate';
 import OneDayForecast from '../OneDayForecast/OneDayForeCast';
 import ThreeDaysForecast from '../ThreeDaysForecast/ThreeDaysForecast';
 import BigForecast from '../BigForecast/BigForecast';
+import withSkeleton from '../../scripts/hocs/withSkeleton';
+
 
 const MainContainer = ({ weatherData, kindForecast }) => {
     return (
@@ -24,4 +26,6 @@ const MainContainer = ({ weatherData, kindForecast }) => {
     )
 }
 
-export default MainContainer
+const MainContainerWithSkeleton = withSkeleton(MainContainer);
+
+export default MainContainerWithSkeleton;
