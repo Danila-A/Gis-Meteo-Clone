@@ -1,10 +1,10 @@
-
+import Skeleton from "../../components/Skeleton/Skeleton";
 
 const withSkeleton = (Component) => {
   return function WithSkeleton(props) {
     const {isLoading, ...restProps} = props;
 
-    if (isLoading) return <p>Loading...</p>
+    if (isLoading) return <Skeleton />
 
     return <Component {...restProps} />
   }
