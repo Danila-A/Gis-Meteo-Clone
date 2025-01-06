@@ -1,0 +1,14 @@
+.container {
+    height: 30px;
+    padding-left: 20px;
+    border-left: 1px solid #0000001f;
+    display: flex;
+    align-items: center;
+}
+.list {
+    font-size: 17px;
+    color: #0099ff;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+

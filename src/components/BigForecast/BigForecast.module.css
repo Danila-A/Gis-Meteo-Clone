@@ -1,0 +1,9 @@
+.inner {
+    display: flex;
+    padding-top: 20px;
+}
+@media (max-width: 600px) {
+    .inner {
+        flex-direction: column;
+    }
+}

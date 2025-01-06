@@ -1,0 +1,9 @@
+.closeIcon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.closeIcon > img {
+    width: 32px;
+    height: 32px;
+}

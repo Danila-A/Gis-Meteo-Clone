@@ -1,32 +1,51 @@
-export const header = {
+const app = {
     headerTop: {
         logo: './logo.svg',
         nav: [
-            'погода',
-            'новости',
-            'карты',
-            'приложения'
+            'Clone',
         ]    
     },
     headerBottom: {
-        searchPlaceHolder: 'поис местоположения',
-        timePoints: [
-            'сейчас',
-            'сегодня',
-            'завтра',
-            '3 дня',
-            '10 дней',
-            '2 недели',
-            'месяц'
+        searchPlaceHolder: 'Поиск местоположения',
+        forecastPoints: [
+            {
+                text: 'сегодня',
+                value: 0,
+            },
+            {
+                text: 'завтра',
+                value: 1,
+            },
+            {
+                text: '3 дня',
+                value: 3,
+            },
+        ]
+    },
+    body : {
+        dateTitle: 'погода на ',
+        temperature: 'температура воздуха в °C',
+        daysOfWeek: [
+            'вс',
+            'пн',
+            'вт',
+            'ср',
+            'чт',
+            'пт',
+            'сб',
         ],
-        others: [
-            'радар'
-        ],
-        more: [
-            'выходные',
-            'неделя',
-            'г\м активность',
-            'дневник'
+        card: {
+            temperature: '°C',
+            windSpeed: 'м/с',
+            precipitation: 'мм'
+        },
+        dayTime: [
+            'ночь',
+            'утро',
+            'день',
+            'вечер'
         ]
     }
 }
+
+export default app;

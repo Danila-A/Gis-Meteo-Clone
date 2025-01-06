@@ -1,0 +1,14 @@
+.inner {
+    padding-top: 20px;
+    display: flex;
+}
+@media (max-width: 1024px) {
+    .inner {
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 600px) {
+    .inner {
+        flex-direction: column;
+    }
+}

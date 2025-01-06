@@ -1,0 +1,10 @@
+.iconWrapper {
+    display: none;
+    width: 100%;
+    justify-content: end;
+}
+@media (max-width: 600px) {
+    .iconWrapper {
+        display: flex;
+    }
+}
