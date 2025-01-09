@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 import Search from "../Search/Search";
 import { useEffect, useRef, useState } from 'react';
 
-const HeaderSearch = ({ setData, body }) => {
+const HeaderSearch = ({ setCity, body }) => {
     const [isFocus, setIsFocus] = useState(false);
     const searchRef = useRef();   
 
@@ -11,6 +11,7 @@ const HeaderSearch = ({ setData, body }) => {
         body.style.overflow = 'hidden';
     }   
 
+    // Ask ChatGPT how does this code work
     useEffect(()=> {
         const handler = (event) => {
 
@@ -35,7 +36,7 @@ const HeaderSearch = ({ setData, body }) => {
         
         searchRef.current.value = '';
         searchRef.current.blur();      
-        location && location.trim() ? setData(location) : null;
+        location && location.trim() ? setCity(location) : null;
     }
 
     return (

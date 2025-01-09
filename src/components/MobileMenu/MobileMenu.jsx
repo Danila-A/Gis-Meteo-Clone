@@ -10,7 +10,6 @@ const MobileMenu = ({ weatherData, setIsVisible, setKindForecast, root }) => {
         root.style.overflow = 'visible';
     }
 
-
     return (
         <>
             <div className={ styles.menu }>

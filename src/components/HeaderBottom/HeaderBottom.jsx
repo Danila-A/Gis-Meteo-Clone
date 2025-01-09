@@ -5,16 +5,14 @@ import HeaderTimePointsList from '../HeaderTimePointsList/HeaderTimePointsList';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import styles from './styles.module.css';
 
-const HeaderBottom = ({ setData, weatherData, setKindForecast }) => {
+const HeaderBottom = ({ setCity, weatherData, setKindForecast }) => {
     const [isVisible, setIsVisible] = useState(false);   
     const body = document.querySelector('body');
     const root = document.querySelector('#root');
 
+    // It must will be checked with a real smartphone (11th line too)
+    // Mobile menu
     isVisible ? root.style.overflow = 'hidden' : null;
-
-    useEffect(() => {
-        console.log(root.style.overflow);
-    }, [isVisible]);
 
     const handleClick = () => {
         setIsVisible(!isVisible);
@@ -25,7 +23,7 @@ const HeaderBottom = ({ setData, weatherData, setKindForecast }) => {
             <div className={ styles.inner }>
 
                 <HeaderSearch 
-                    setData={ setData } 
+                    setCity={ setCity } 
                     body={ body } 
                 />
                 <HeaderTimePointsList 
