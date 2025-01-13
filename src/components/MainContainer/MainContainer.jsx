@@ -4,11 +4,14 @@ import OneDayForecast from '../OneDayForecast/OneDayForeCast';
 import ThreeDaysForecast from '../ThreeDaysForecast/ThreeDaysForecast';
 import withSkeleton from '../../scripts/hocs/withSkeleton';
 import { useSelector } from 'react-redux';
+import { useFilter } from '../../scripts/hooks/useFilter';
 
 
 const MainContainer = () => {
     const kindForecast = useSelector(state => state.data.kindForecast);
-    const weatherData = useSelector(state => state.data.forecast);
+    const notFilteredData = useSelector(state => state.data.forecast);
+    const filterData = useFilter(notFilteredData);
+    const weatherData = filterData(notFilteredData);
 
     return (
         <main className={ styles.main }>

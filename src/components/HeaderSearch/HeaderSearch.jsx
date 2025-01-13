@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 import Search from "../Search/Search";
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setCity } from '../../store/dataSlice';
+import { fetchForecast } from '../../store/dataSlice';
 
 
 const HeaderSearch = ({ body }) => {
@@ -39,8 +39,8 @@ const HeaderSearch = ({ body }) => {
         setIsFocus(false); 
         
         searchRef.current.value = '';
-        searchRef.current.blur();      
-        city && city.trim() ? dispatch(setCity({ city })) : null;
+        searchRef.current.blur(); 
+        city && city.trim() ? dispatch(fetchForecast(city)) : null;
     }
 
     return (

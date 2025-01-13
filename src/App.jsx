@@ -1,22 +1,16 @@
 import { useEffect } from "react";
 import Header from "./components/Header/Header";
 import MainContainer from "./components/MainContainer/MainContainer";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchForecast } from "./store/dataSlice";
-
 
 const App = () => {
   const dispatch = useDispatch();
-  const city = useSelector(state => state.data.city);
 
   useEffect(() => {
-    dispatch(fetchForecast(city));
+    dispatch(fetchForecast('Москва'));
   }, [])
-  
-  // For debugging
-  // weatherData && console.log('Not filtered data:\n', weatherData);
-  // weatherData && console.log('Filtered data:\n', filteredWeatherData);
-  
+    
   return (
     <>
       {/* 

@@ -22,9 +22,7 @@ const HeaderBottom = () => {
         <div className={ styles.headerBottom}>
             <div className={ styles.inner }>
 
-                <HeaderSearch 
-                    body={ body } 
-                />
+                <HeaderSearch body={ body } />
                 <HeaderTimePointsList />
                 <BurgerIcon handleClick={ handleClick }/>
 

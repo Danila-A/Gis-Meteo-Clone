@@ -1,13 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { useFilter } from "../scripts/hooks/useFilter";
 
-// http://api.weatherapi.com/v1/forecast.json?key=0d65cb3ac45940d289a191409241112&q=Москва&days=13
 
 export const fetchForecast = createAsyncThunk(
     'data/fetchForecast',
     async function(city, {rejectWithValue}) {    
         try {
-            configuration = {
+            const configuration = {
                 url: 'http://api.weatherapi.com/v1/forecast.json',
                 key: '0d65cb3ac45940d289a191409241112',
                 q: city,
@@ -15,7 +13,7 @@ export const fetchForecast = createAsyncThunk(
             }
             const fullURL = configuration.url + "?key=" + configuration.key + "&q=" + configuration.q + "&days=" + configuration.days;
 
-            const response = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=10');
+            const response = await fetch(fullURL);
             if(!response.ok) throw new Error('Server Error!');
             const data = await response.json();
 
@@ -31,7 +29,6 @@ const dataSlice = createSlice({
     initialState: {
         kindForecast: 0,
         isLoading: true,
-        city: 'Москва',
         forecast: {},
         error: null,
     },
@@ -42,9 +39,6 @@ const dataSlice = createSlice({
         toggleLoadingIndicator(state, action) {
             state.isLoading = action.payload.isLoading;
         },
-        setCity(state, action) {
-            state.city = action.payload.city;
-        }
     },
     extraReducers: (builder) => {
         builder
@@ -53,8 +47,7 @@ const dataSlice = createSlice({
             })
             .addCase(fetchForecast.fulfilled, (state, action) => {
                 state.isLoading = false;
-                const filtered = useFilter();
-                state.forecast = filtered(action.payload);
+                state.forecast = action.payload;
             })
             .addCase(fetchForecast.rejected, (state, action) => {
                 state.isLoading = false;
@@ -63,5 +56,5 @@ const dataSlice = createSlice({
     }
 });
 
-export const { changeKindForecast, toggleLoadingIndicator, setCity } = dataSlice.actions;
+export const { changeKindForecast, toggleLoadingIndicator } = dataSlice.actions;
 export default dataSlice.reducer;
