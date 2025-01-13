@@ -1,22 +1,16 @@
+import { useEffect } from "react";
 import Header from "./components/Header/Header";
 import MainContainer from "./components/MainContainer/MainContainer";
-import { useFilter }  from "./scripts/hooks/useFilter";
-import useFetch from "./scripts/hooks/useFetch";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { fetchForecast } from "./store/dataSlice";
 
 const App = () => {
-  const [data, setData] = useState('Москва');
-  const [isLoading, setIsLoading] = useState(true);
-  const [kindForecast, setKindForecast] = useState(0);
-  let filteredWeatherData;
+  const dispatch = useDispatch();
 
-  const weatherData = useFetch(data, setIsLoading);
-  weatherData ? filteredWeatherData = useFilter(weatherData, kindForecast): null ;
-
-  weatherData ? console.log(weatherData) : null;
-
-  weatherData ? console.log(useFilter(weatherData, kindForecast)) : null;
-  
+  useEffect(() => {
+    dispatch(fetchForecast('Москва'));
+  }, [])
+    
   return (
     <>
       {/* 
@@ -27,19 +21,8 @@ const App = () => {
 
         Тестовые данные: для начальной загрузки или тестирования интерфейса, пока ещё нет данных от сервера.
       */}
-      <Header 
-        setData={ setData } 
-        weatherData={ weatherData }  
-        setKindForecast={ setKindForecast }
-      />
-
-
-      <MainContainer 
-        weatherData={ filteredWeatherData } 
-        kindForecast={ kindForecast } 
-        isLoading={ isLoading } 
-      />
-      
+      <Header />
+      <MainContainer />
     </>
   )
 }

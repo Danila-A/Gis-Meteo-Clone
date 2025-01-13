@@ -1,15 +1,18 @@
 import header from '../../data/content';
 import CloseIcon from '../../icons/CloseIcon/CloseIcon';
 import styles from './MobileMenu.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeKindForecast } from '../../store/dataSlice';
 
-const MobileMenu = ({ weatherData, setIsVisible, setKindForecast, root }) => {
+const MobileMenu = ({ setIsVisible, root }) => {
+    const dispatch = useDispatch();
+    const weatherData = useSelector(state => state.data.forecast);
 
     const handleClick = (event) => {
-        setKindForecast(Number(event.target.getAttribute('data-value')));
+        dispatch(changeKindForecast( { kindForecast: Number(event.target.getAttribute('data-value')) }));
         setIsVisible(false);
         root.style.overflow = 'visible';
     }
-
 
     return (
         <>

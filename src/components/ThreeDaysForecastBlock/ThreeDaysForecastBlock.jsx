@@ -1,5 +1,4 @@
 import styles from './ThreeDaysForecastBlock.module.css';
-import app from '../../data/content';
 import ForecastCard from '../ForecastCard/ForecastCard';
 
 const ThreeDaysForecastBlock = ({ day }) => {

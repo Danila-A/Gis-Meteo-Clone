@@ -1,16 +1,21 @@
 import styles from './styles.module.css';
 import Search from "../Search/Search";
 import { useEffect, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchForecast } from '../../store/dataSlice';
 
-const HeaderSearch = ({ setData, body }) => {
+
+const HeaderSearch = ({ body }) => {
     const [isFocus, setIsFocus] = useState(false);
     const searchRef = useRef();   
+    const dispatch = useDispatch();
 
     const handleOnFocus = () => {
         setIsFocus(true);
         body.style.overflow = 'hidden';
     }   
 
+    // Ask ChatGPT how does this code work
     useEffect(()=> {
         const handler = (event) => {
 
@@ -30,12 +35,12 @@ const HeaderSearch = ({ setData, body }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const location = searchRef.current.value;
+        const city = searchRef.current.value;
         setIsFocus(false); 
         
         searchRef.current.value = '';
-        searchRef.current.blur();      
-        location && location.trim() ? setData(location) : null;
+        searchRef.current.blur(); 
+        city && city.trim() ? dispatch(fetchForecast(city)) : null;
     }
 
     return (
