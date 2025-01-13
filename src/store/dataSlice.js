@@ -1,13 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
+const API_KEY = import.meta.env.VITE_API_KEY;
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const fetchForecast = createAsyncThunk(
     'data/fetchForecast',
     async function(city, {rejectWithValue}) {    
         try {
             const configuration = {
-                url: 'http://api.weatherapi.com/v1/forecast.json',
-                key: '0d65cb3ac45940d289a191409241112',
+                url: BASE_URL,
+                key: API_KEY,
                 q: city,
                 days: 14,
             }
