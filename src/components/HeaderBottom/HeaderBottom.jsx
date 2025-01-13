@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import BurgerIcon from '../../icons/BurgerIcon/BurgerIcon';
 import HeaderSearch from '../HeaderSearch/HeaderSearch';
 import HeaderTimePointsList from '../HeaderTimePointsList/HeaderTimePointsList';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import styles from './styles.module.css';
 
-const HeaderBottom = ({ weatherData }) => {
+const HeaderBottom = () => {
     const [isVisible, setIsVisible] = useState(false);   
     const body = document.querySelector('body');
     const root = document.querySelector('#root');
@@ -25,19 +25,14 @@ const HeaderBottom = ({ weatherData }) => {
                 <HeaderSearch 
                     body={ body } 
                 />
-                <HeaderTimePointsList 
-                    weatherData={ weatherData } 
-                />
+                <HeaderTimePointsList />
                 <BurgerIcon handleClick={ handleClick }/>
 
-                { 
-                    isVisible &&
-                        <MobileMenu 
-                            weatherData={ weatherData } 
+                {isVisible &&
+                        <MobileMenu  
                             setIsVisible={ setIsVisible } 
                             root={ root }
-                        />  
-                }
+                        />}
             </div>
         </div>
     );

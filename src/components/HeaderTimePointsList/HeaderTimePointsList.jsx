@@ -1,11 +1,12 @@
 import styles from './styles.module.css';
 import header from '../../data/content';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { changeKindForecast } from '../../store/dataSlice';
 
 
-const HeaderTimePointsList = ({ weatherData }) => {
+const HeaderTimePointsList = () => {
     const dispatch = useDispatch();
+    const weatherData = useSelector(state => state.data.forecast);
 
     const handleClick = (event) => {
         dispatch(changeKindForecast({ kindForecast: Number(event.target.getAttribute('data-value')) }));

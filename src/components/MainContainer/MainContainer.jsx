@@ -6,8 +6,9 @@ import withSkeleton from '../../scripts/hocs/withSkeleton';
 import { useSelector } from 'react-redux';
 
 
-const MainContainer = ({ weatherData }) => {
+const MainContainer = () => {
     const kindForecast = useSelector(state => state.data.kindForecast);
+    const weatherData = useSelector(state => state.data.forecast);
 
     return (
         <main className={ styles.main }>

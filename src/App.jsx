@@ -1,9 +1,17 @@
+import { useEffect } from "react";
 import Header from "./components/Header/Header";
 import MainContainer from "./components/MainContainer/MainContainer";
-import useFetch from "./scripts/hooks/useFetch";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchForecast } from "./store/dataSlice";
+
 
 const App = () => {
-  const weatherData = useFetch();
+  const dispatch = useDispatch();
+  const city = useSelector(state => state.data.city);
+
+  useEffect(() => {
+    dispatch(fetchForecast(city));
+  }, [])
   
   // For debugging
   // weatherData && console.log('Not filtered data:\n', weatherData);
@@ -19,13 +27,8 @@ const App = () => {
 
         Тестовые данные: для начальной загрузки или тестирования интерфейса, пока ещё нет данных от сервера.
       */}
-      <Header 
-        weatherData={ weatherData }  
-      />
-      <MainContainer 
-        weatherData={ weatherData } 
-      />
-      
+      <Header />
+      <MainContainer />
     </>
   )
 }
