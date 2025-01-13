@@ -5,7 +5,7 @@ import HeaderTimePointsList from '../HeaderTimePointsList/HeaderTimePointsList';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import styles from './styles.module.css';
 
-const HeaderBottom = ({ setCity, weatherData, setKindForecast }) => {
+const HeaderBottom = ({ weatherData }) => {
     const [isVisible, setIsVisible] = useState(false);   
     const body = document.querySelector('body');
     const root = document.querySelector('#root');
@@ -23,25 +23,20 @@ const HeaderBottom = ({ setCity, weatherData, setKindForecast }) => {
             <div className={ styles.inner }>
 
                 <HeaderSearch 
-                    setCity={ setCity } 
                     body={ body } 
                 />
                 <HeaderTimePointsList 
                     weatherData={ weatherData } 
-                    setKindForecast={ setKindForecast }
                 />
                 <BurgerIcon handleClick={ handleClick }/>
 
                 { 
-                    isVisible ? 
+                    isVisible &&
                         <MobileMenu 
                             weatherData={ weatherData } 
                             setIsVisible={ setIsVisible } 
-                            setKindForecast={ setKindForecast }
                             root={ root }
-                        /> 
-                    : 
-                        null 
+                        />  
                 }
             </div>
         </div>

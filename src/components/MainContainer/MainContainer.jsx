@@ -3,9 +3,12 @@ import PlaceAndDate from '../PlaceAndDate/PlaceAndDate';
 import OneDayForecast from '../OneDayForecast/OneDayForeCast';
 import ThreeDaysForecast from '../ThreeDaysForecast/ThreeDaysForecast';
 import withSkeleton from '../../scripts/hocs/withSkeleton';
+import { useSelector } from 'react-redux';
 
 
-const MainContainer = ({ weatherData, kindForecast }) => {
+const MainContainer = ({ weatherData }) => {
+    const kindForecast = useSelector(state => state.data.kindForecast);
+
     return (
         <main className={ styles.main }>
             <div className={ styles.inner }>

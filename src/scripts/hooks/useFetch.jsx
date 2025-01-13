@@ -1,19 +1,27 @@
 import { useEffect, useState } from "react"
 import { getTestWeather } from "../api/getWether";
+import { useSelector, useDispatch } from "react-redux";
+import { useFilter } from "./useFilter";
+import { toggleLoadingIndicator } from "../../store/dataSlice";
 
-const useFetch = (place, setIsLoading) => {
+const useFetch = () => {
     const [data, setData] = useState(null);
+    const filterData = useFilter();
+    const dispatch = useDispatch();
+    const city = useSelector(state => state.data.city);
       
     useEffect(()=>{
       (async () => {
-        setIsLoading(true);
-        const response = await getTestWeather(place);
-        setData(response);
-        setIsLoading(false);
-      })(); 
-    },[place]);
+        dispatch(toggleLoadingIndicator({ isLoading: true }));
 
-    if (data) return data.data;
+        const response = await getTestWeather(city);
+        setData(response);
+
+        dispatch(toggleLoadingIndicator({ isLoading: false }));
+      })(); 
+    },[city]);
+
+    if (data) return filterData(data.data);
 }
 
 export default useFetch;
