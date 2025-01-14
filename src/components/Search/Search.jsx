@@ -1,5 +1,5 @@
 import styles from './search.module.css';
-import header from '../../data/content';
+import contentData from '../../data/content.json';
 import { forwardRef } from 'react';
 
 const Search = forwardRef( 
@@ -13,7 +13,7 @@ const Search = forwardRef(
                         onFocus={ onFocus } 
                         className={ styles.input } 
                         type="text" 
-                        placeholder={ header.headerBottom.searchPlaceHolder } 
+                        placeholder={ contentData.headerBottom.searchPlaceHolder } 
                     />
                 </form>
             </div>

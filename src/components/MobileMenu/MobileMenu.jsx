@@ -1,4 +1,4 @@
-import header from '../../data/content';
+import contentData from '../../data/content.json'
 import CloseIcon from '../../icons/CloseIcon/CloseIcon';
 import styles from './MobileMenu.module.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,7 +23,7 @@ const MobileMenu = ({ setIsVisible, root }) => {
                         root={ root }
                     />
                     <ul className={ styles.menuList }>
-                        {weatherData ? (header.headerBottom.forecastPoints?.map((point, index) => {
+                        {weatherData ? (contentData.headerBottom.forecastPoints?.map((point, index) => {
                             return (
                                 <li 
                                     className={ styles.listItem } 

@@ -9,9 +9,7 @@ import { useFilter } from '../../scripts/hooks/useFilter';
 
 const MainContainer = () => {
     const kindForecast = useSelector(state => state.data.kindForecast);
-    const notFilteredData = useSelector(state => state.data.forecast);
-    const filterData = useFilter(notFilteredData);
-    const weatherData = filterData(notFilteredData);
+    const weatherData = useFilter(useSelector(state => state.data.forecast));
 
     return (
         <main className={ styles.main }>
