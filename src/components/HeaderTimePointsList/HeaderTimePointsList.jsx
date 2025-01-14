@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-import header from '../../data/content';
+import contentData from '../../data/content.json'
 import { useDispatch, useSelector } from 'react-redux';
 import { changeKindForecast } from '../../store/dataSlice';
 
@@ -16,7 +16,7 @@ const HeaderTimePointsList = () => {
         <div className={ styles.wrapper }>
             <ul className={ styles.list }>
 
-                {weatherData ? (header.headerBottom.forecastPoints?.map((point, index) => {
+                {weatherData ? (contentData.headerBottom.forecastPoints?.map((point, index) => {
                     return (
                         <li 
                             className={ styles.listItem } 

@@ -1,55 +1,50 @@
 {
-    "sections": [
+  "headerTop": {
+    "logo": "./logo.svg",
+    "nav": [
+      "Clone"
+    ]    
+  },
+  "headerBottom": {
+    "searchPlaceHolder": "Поиск местоположения",
+    "forecastPoints": [
       {
-        "id": "about",
-        "title": "About Us",
-        "text": "We are a leading company in providing top-notch solutions to our clients.",
-        "image": "/images/about.jpg"
+        "text": "сегодня",
+        "value": 0
       },
       {
-        "id": "services",
-        "title": "Our Services",
-        "text": "We offer a range of services to meet every type of business need.",
-        "list": [
-          {
-            "title": "Consulting",
-            "description": "Expert advice tailored to your business goals."
-          },
-          {
-            "title": "Development",
-            "description": "Custom development to streamline your operations."
-          },
-          {
-            "title": "Support",
-            "description": "Ongoing support to ensure smooth functioning."
-          }
-        ]
+        "text": "завтра",
+        "value": 1
       },
       {
-        "id": "contact",
-        "title": "Contact Us",
-        "text": "Get in touch with us via the form below or visit our office at the address provided.",
-        "formFields": [
-          {
-            "name": "name",
-            "label": "Your Name",
-            "type": "text",
-            "required": true
-          },
-          {
-            "name": "email",
-            "label": "Your Email",
-            "type": "email",
-            "required": true
-          },
-          {
-            "name": "message",
-            "label": "Message",
-            "type": "textarea",
-            "required": true
-          }
-        ]
+        "text": "3 дня",
+        "value": 3
       }
     ]
+  },
+  "body" : {
+    "dateTitle": "погода на ",
+    "temperature": "температура воздуха в °C",
+    "daysOfWeek": [
+      "вс",
+      "пн",
+      "вт",
+      "ср",
+      "чт",
+      "пт",
+      "сб"
+    ],
+    "card": {
+      "temperature": "°C",
+      "windSpeed": "м/с",
+      "precipitation": "мм"
+    },
+    "dayTime": [
+      "ночь",
+      "утро",
+      "день",
+      "вечер"
+    ]
   }
+}
   
