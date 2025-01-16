@@ -1,6 +1,6 @@
 import styles from './Main.module.css';
 import PlaceAndDate from '../PlaceAndDate/PlaceAndDate';
-import OneDayForecast from '../OneDayForecast/OneDayForeCast';
+import OneDayForecast from '../OneDayForecast/OneDayForecast';
 import ThreeDaysForecast from '../ThreeDaysForecast/ThreeDaysForecast';
 import withSkeleton from '../../scripts/hocs/withSkeleton';
 import { useSelector } from 'react-redux';
