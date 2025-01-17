@@ -4,7 +4,7 @@ import styles from './ThreeDaysForecast.module.css';
 const ThreeDaysForecast = ({ forecast }) => {
     return (
     <div>
-        <div className={ styles.inner } >
+        <div className={ styles.inner }>
             {
                 forecast.map((item, index) => {
                     return (

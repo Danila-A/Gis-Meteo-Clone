@@ -4,44 +4,43 @@ import styles from './MobileMenu.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeKindForecast } from '../../store/dataSlice';
 
-const MobileMenu = ({ setIsVisible, root }) => {
+const MobileMenu = ({ setIsVisible }) => {
     const dispatch = useDispatch();
     const weatherData = useSelector(state => state.data.forecast);
 
     const handleClick = (event) => {
         dispatch(changeKindForecast( { kindForecast: Number(event.target.getAttribute('data-value')) }));
         setIsVisible(false);
-        root.style.overflow = 'visible';
     }
 
     return (
         <>
             <div className={ styles.menu }>
                 <div className={ styles.inner }>
-                    <CloseIcon  
-                        setIsVisible={ setIsVisible } 
-                        root={ root }
-                    />
+
+                    <CloseIcon setIsVisible={ setIsVisible } />
+
                     <ul className={ styles.menuList }>
-                        {weatherData ? (contentData.headerBottom.forecastPoints?.map((point, index) => {
+                        {weatherData && (contentData.headerBottom.forecastPoints?.map((point, index) => {
                             return (
                                 <li 
                                     className={ styles.listItem } 
                                     key={ index }>
                                         <a 
                                             data-value={ point.value }
-                                            onClick={(event) => handleClick(event)}>
-                                                { point.text }
+                                            onClick={ (event) => handleClick(event) }
+                                        >
+                                            { point.text }
                                         </a>
                                 </li>
                             );
-                        })) : null }
+                        }))}
                     </ul>
+
                 </div>
             </div>
-            <div className={ styles.background }></div>
         </>                
     )
 }
 
-export default MobileMenu
+export default MobileMenu;
