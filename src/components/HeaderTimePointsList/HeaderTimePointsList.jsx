@@ -16,19 +16,23 @@ const HeaderTimePointsList = () => {
         <div className={ styles.wrapper }>
             <ul className={ styles.list }>
 
-                {weatherData ? (contentData.headerBottom.forecastPoints?.map((point, index) => {
+                {weatherData && (contentData.headerBottom.forecastPoints?.map((point, index) => {
                     return (
                         <li 
-                            className={ styles.listItem } 
-                            key={ index }>
-                                <a 
-                                    data-value={ point.value }
-                                    onClick={(event) => handleClick(event)} >
-                                        { point.text }
-                                </a>
+                            key={ index }    
+                            className={ styles.listItem }
+                        >
+                            <a
+                                className={ styles.button }
+                                data-value={ point.value }
+                                onClick={ (event) => handleClick(event) }
+                            >
+                                { point.text }
+                            </a>
                         </li>
                     );
-                })) : null }             
+                }))}    
+
             </ul>
         </div>
     );

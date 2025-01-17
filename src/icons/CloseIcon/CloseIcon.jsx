@@ -1,18 +1,23 @@
 import img from '../../images/icons8-cancel-50.png';
 import styles from './CloseIcon.module.css';
 
-const CloseIcon = ({ setIsVisible, root }) => {
-
+const CloseIcon = ({ setIsVisible }) => {
   const handleClick = () => {
     setIsVisible(false);
-    root.style.overflow = 'visible';
   }
 
   return (
-    <div className={ styles.closeIcon } onClick={ handleClick }>
-        <img src={ img } alt="close icon" />
+    <div 
+      className={ styles.wrapper } 
+      onClick={ handleClick }
+    >
+      <img 
+        className={ styles.icon }
+        src={ img } 
+        alt="close icon" 
+      />
     </div>
   )
 }
 
-export default CloseIcon
+export default CloseIcon;

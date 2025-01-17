@@ -4,7 +4,6 @@
     align-items: center;
     margin-right: 30px;
     transform: translateY(-5px);
-    cursor: pointer;
 }
 .logo>svg:hover>path {
     fill: red;

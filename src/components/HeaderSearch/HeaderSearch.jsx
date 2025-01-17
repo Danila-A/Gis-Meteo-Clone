@@ -5,32 +5,27 @@ import { useDispatch } from 'react-redux';
 import { fetchForecast } from '../../store/dataSlice';
 
 
-const HeaderSearch = ({ body }) => {
+const HeaderSearch = () => {
     const [isFocus, setIsFocus] = useState(false);
     const searchRef = useRef();   
-    const dispatch = useDispatch();
+    const dispatch = useDispatch();  
+    const body = document.querySelector('body');
+
+    useEffect(()=> {
+        const handler = (event) => {
+            if(searchRef.current != event.target) {
+                body.style.overflow = 'visible';              
+                setIsFocus(false);
+            }
+        }
+        
+        document.addEventListener('click', handler);
+    }, [searchRef])
 
     const handleOnFocus = () => {
         setIsFocus(true);
         body.style.overflow = 'hidden';
-    }   
-
-    // Ask ChatGPT how does this code work
-    useEffect(()=> {
-        const handler = (event) => {
-
-            if(searchRef.current != event.target) {
-                setIsFocus(false);
-                body.style.overflow = 'visible';
-            }
-        }
-
-        document.addEventListener('click', handler);
-
-        return () => {
-            document.removeEventListener('click', handler);
-        } 
-    }, [searchRef])
+    }  
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -47,14 +42,16 @@ const HeaderSearch = ({ body }) => {
         <>
             <div className={ styles.wrapper }>
                 <div className={ styles.search } style={ isFocus && window.innerWidth > 430 ? { minWidth: '400px' } : null}>
+
                     <Search 
                         ref={ searchRef } 
                         onFocus={ handleOnFocus } 
                         onSubmit={ handleSubmit }
                     />  
+
                 </div>
             </div>
-            <div className={ styles.backbround } style={ isFocus ? { opacity: 1, zIndex: 2} : null}></div>
+            <div className={ styles.background } style={ isFocus ? { opacity: 1, zIndex: 2} : null}></div>
         </>
     );
 }

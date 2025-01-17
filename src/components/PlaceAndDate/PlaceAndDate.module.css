@@ -1,7 +1,7 @@
 .placeAndDate {
     display: flex; 
     justify-content: space-between; 
-    font-size: 1.375rem;
+    font-size: 22px;
 }
 .date::first-letter {
     text-transform: capitalize;

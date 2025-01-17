@@ -5,8 +5,6 @@
     position: relative;
     min-height: 40px;
     min-width: 210px;
-    /* Данным способом можно подключать стили из других файлов стилей */
-    /* composes: wrapper from '../../styles/global.css'; */
 }
 .search {
     position: absolute;
@@ -16,7 +14,7 @@
     min-width: 210px;
     transition: min-width .5s ease;
 }
-.backbround {
+.background {
     position: absolute;
     background-color: #00000088;
     min-width: 100%;
