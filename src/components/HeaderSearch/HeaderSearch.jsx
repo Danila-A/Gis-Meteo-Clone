@@ -34,7 +34,8 @@ const HeaderSearch = () => {
         setIsFocus(false); 
         
         searchRef.current.value = '';
-        searchRef.current.blur(); 
+        searchRef.current.blur();
+        body.style.overflow = 'visible'; 
         city && city.trim() ? dispatch(fetchForecast(city)) : null;
     }
 
