@@ -1,3 +1,4 @@
+import Error from "../../components/Error/Error";
 import Skeleton from "../../components/Skeleton/Skeleton";
 import { useSelector } from "react-redux";
 
@@ -7,7 +8,7 @@ const withSkeleton = (Component) => {
     const error = useSelector(state => state.data.error);
 
     if (isLoading) return <Skeleton />
-    if (error) return <p>{error}</p>
+    if (error) return <Error />
 
     return <Component {...props} />
   }
