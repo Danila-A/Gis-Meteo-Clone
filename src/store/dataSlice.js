@@ -45,9 +45,11 @@ const dataSlice = createSlice({
         builder
             .addCase(fetchForecast.pending, (state) => {
                 state.isLoading = true;
+                state.error = false;
             })
             .addCase(fetchForecast.fulfilled, (state, action) => {
                 state.isLoading = false;
+                state.error = false;
                 state.forecast = action.payload;
             })
             .addCase(fetchForecast.rejected, (state, action) => {
