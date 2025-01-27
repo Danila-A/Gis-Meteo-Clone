@@ -1,7 +1,7 @@
-import ThreeDaysForecastBlock from '../ThreeDaysForecastBlock/ThreeDaysForecastBlock';
+import { ThreeDaysForecastBlock } from '../ThreeDaysForecastBlock/ThreeDaysForecastBlock';
 import styles from './ThreeDaysForecast.module.css';
 
-const ThreeDaysForecast = ({ forecast }) => {
+export const ThreeDaysForecast = ({ forecast }) => {
     return (
     <div>
         <div className={ styles.inner }>
@@ -19,5 +19,3 @@ const ThreeDaysForecast = ({ forecast }) => {
     </div>
     )
 }
-
-export default ThreeDaysForecast;

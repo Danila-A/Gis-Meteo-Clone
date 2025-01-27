@@ -1,10 +1,10 @@
 import contentData from '../../data/content.json'
-import CloseIcon from '../../icons/CloseIcon/CloseIcon';
 import styles from './MobileMenu.module.css';
+import { CloseIcon } from '../../icons/CloseIcon/CloseIcon';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeKindForecast } from '../../store/dataSlice';
 
-const MobileMenu = ({ setIsVisible }) => {
+export const MobileMenu = ({ setIsVisible }) => {
     const dispatch = useDispatch();
     const weatherData = useSelector(state => state.data.forecast);
 
@@ -42,5 +42,3 @@ const MobileMenu = ({ setIsVisible }) => {
         </>                
     )
 }
-
-export default MobileMenu;

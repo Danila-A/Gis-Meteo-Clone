@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeKindForecast } from '../../store/dataSlice';
 
 
-const HeaderTimePointsList = () => {
+export const HeaderTimePointsList = () => {
     const dispatch = useDispatch();
     const weatherData = useSelector(state => state.data.forecast);
 
@@ -37,5 +37,3 @@ const HeaderTimePointsList = () => {
         </div>
     );
 }
-
-export default HeaderTimePointsList;

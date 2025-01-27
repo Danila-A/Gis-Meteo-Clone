@@ -1,8 +1,8 @@
-import HeaderLogo from '../HeaderLogo/HeaderLogo';
-import HeaderNav from '../HeaderNav/HeaderNav';
+import { HeaderLogo } from '../HeaderLogo/HeaderLogo';
+import { HeaderNav } from '../HeaderNav/HeaderNav';
 import styles from './styles.module.css';
 
-const HeaderTop = () => {
+export const HeaderTop = () => {
     return (
         <div>
             <div className={ styles.inner }>
@@ -12,5 +12,3 @@ const HeaderTop = () => {
         </div>
     );
 }
-
-export default HeaderTop;

@@ -1,6 +1,6 @@
 import styles from './Skeleton.module.css';
 
-const Skeleton = () => {
+export const Skeleton = () => {
   return (
     <div className={ styles.main }>
         <div className={ styles.mainInner }>
@@ -27,5 +27,3 @@ const Skeleton = () => {
     </div>
   )
 }
-
-export default Skeleton;

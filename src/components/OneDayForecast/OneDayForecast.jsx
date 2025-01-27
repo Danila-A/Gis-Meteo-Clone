@@ -1,7 +1,7 @@
 import styles from './OneDayForecast.module.css';
-import ForecastCard from '../ForecastCard/ForecastCard';
+import { ForecastCard } from '../ForecastCard/ForecastCard';
 
-const OneDayForecast = ({ forecast }) => {
+export const OneDayForecast = ({ forecast }) => {
   return (
     <div>
         <div className={ styles.inner } >
@@ -19,5 +19,3 @@ const OneDayForecast = ({ forecast }) => {
     </div>
   )
 }
-
-export default OneDayForecast
