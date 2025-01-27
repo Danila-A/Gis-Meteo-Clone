@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { fetchForecast } from "./store/dataSlice";
 
 
-export const App = () => {
+export const App: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
