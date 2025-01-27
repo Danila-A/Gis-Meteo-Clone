@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import BurgerIcon from '../../icons/BurgerIcon/BurgerIcon';
-import HeaderSearch from '../HeaderSearch/HeaderSearch';
-import HeaderTimePointsList from '../HeaderTimePointsList/HeaderTimePointsList';
-import MobileMenu from '../MobileMenu/MobileMenu';
+import { HeaderSearch } from '../HeaderSearch/HeaderSearch';
+import { HeaderTimePointsList } from '../HeaderTimePointsList/HeaderTimePointsList';
+import { BurgerIcon } from '../../icons/BurgerIcon/BurgerIcon';
+import { MobileMenu } from '../MobileMenu/MobileMenu';
 import styles from './styles.module.css';
 
-const HeaderBottom = () => {
+export const HeaderBottom = () => {
     const [isVisible, setIsVisible] = useState(false);   
     
     const handleClick = () => {
@@ -28,5 +28,3 @@ const HeaderBottom = () => {
         </div>
     );
 }
-
-export default HeaderBottom;

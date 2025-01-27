@@ -1,7 +1,7 @@
 import styles from './ThreeDaysForecastBlock.module.css';
-import ForecastCard from '../ForecastCard/ForecastCard';
+import { ForecastCard } from '../ForecastCard/ForecastCard';
 
-const ThreeDaysForecastBlock = ({ day }) => {
+export const ThreeDaysForecastBlock = ({ day }) => {
   return (
     <div className={ styles.container } >
       <div>
@@ -25,5 +25,3 @@ const ThreeDaysForecastBlock = ({ day }) => {
     </div>
   )
 }
-
-export default ThreeDaysForecastBlock;

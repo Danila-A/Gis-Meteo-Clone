@@ -1,8 +1,8 @@
 import styles from './Main.module.css';
-import PlaceAndDate from '../PlaceAndDate/PlaceAndDate';
-import OneDayForecast from '../OneDayForecast/OneDayForecast';
-import ThreeDaysForecast from '../ThreeDaysForecast/ThreeDaysForecast';
-import withSkeleton from '../../scripts/hocs/withSkeleton';
+import { PlaceAndDate } from '../PlaceAndDate/PlaceAndDate';
+import { OneDayForecast } from '../OneDayForecast/OneDayForecast';
+import { ThreeDaysForecast } from '../ThreeDaysForecast/ThreeDaysForecast';
+import { withSkeleton } from '../../scripts/hocs/withSkeleton';
 import { useSelector } from 'react-redux';
 import { useFilter } from '../../scripts/hooks/useFilter';
 
@@ -28,6 +28,4 @@ const MainContainer = () => {
     )
 }
 
-const MainContainerWithSkeleton = withSkeleton(MainContainer);
-
-export default MainContainerWithSkeleton;
+export const MainContainerWithSkeleton = withSkeleton(MainContainer);

@@ -1,6 +1,6 @@
 import styles from './ForecastCard.module.css';
 
-const ForecastCard = ({ item }) => {
+export const ForecastCard = ({ item }) => {
     return (
     <div className={ styles.card } >
         <div className={ styles.inner }>
@@ -25,5 +25,3 @@ const ForecastCard = ({ item }) => {
     </div>
     )
 }
-
-export default ForecastCard;
