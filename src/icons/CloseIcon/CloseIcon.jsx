@@ -1,7 +1,7 @@
 import img from '../../images/icons8-cancel-50.png';
 import styles from './CloseIcon.module.css';
 
-const CloseIcon = ({ setIsVisible }) => {
+export const CloseIcon = ({ setIsVisible }) => {
   const handleClick = () => {
     setIsVisible(false);
   }
@@ -19,5 +19,3 @@ const CloseIcon = ({ setIsVisible }) => {
     </div>
   )
 }
-
-export default CloseIcon;

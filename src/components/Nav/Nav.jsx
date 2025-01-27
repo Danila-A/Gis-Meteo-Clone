@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import contentData from '../../data/content.json';
 
-const Nav = () => {
+export const Nav = () => {
     return (
         <div className={ styles.container }>
             <ul className={ styles.list }>
@@ -14,5 +14,3 @@ const Nav = () => {
         </div>
     );
 }
-
-export default Nav;

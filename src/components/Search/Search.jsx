@@ -2,7 +2,7 @@ import styles from './search.module.css';
 import contentData from '../../data/content.json';
 import { forwardRef } from 'react';
 
-const Search = forwardRef( 
+export const Search = forwardRef( 
     ({ onFocus, onSubmit }, ref) => {
 
         return (
@@ -20,5 +20,3 @@ const Search = forwardRef(
         );
     }
 )
-
-export default Search;

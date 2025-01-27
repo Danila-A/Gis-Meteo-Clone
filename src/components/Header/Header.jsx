@@ -1,7 +1,7 @@
-import HeaderBottom from "../HeaderBottom/HeaderBottom";
-import HeaderTop from "../HeaderTop/HeaderTop";
+import { HeaderBottom } from "../HeaderBottom/HeaderBottom";
+import { HeaderTop } from "../HeaderTop/HeaderTop";
 
-const Header = () => {
+export const Header = () => {
     return (
         <header>
             <HeaderTop />
@@ -9,5 +9,3 @@ const Header = () => {
         </header>
     );
 }
-
-export default Header;

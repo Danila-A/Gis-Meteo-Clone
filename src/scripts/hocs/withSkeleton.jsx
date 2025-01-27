@@ -1,8 +1,8 @@
-import Error from "../../components/Error/Error";
-import Skeleton from "../../components/Skeleton/Skeleton";
+import { Error } from "../../components/Error/Error";
+import { Skeleton } from "../../components/Skeleton/Skeleton";
 import { useSelector } from "react-redux";
 
-const withSkeleton = (Component) => {
+export const withSkeleton = (Component) => {
   return function WithSkeleton(props) {
     const isLoading = useSelector(state => state.data.isLoading);
     const error = useSelector(state => state.data.error);
@@ -13,5 +13,3 @@ const withSkeleton = (Component) => {
     return <Component {...props} />
   }
 }
-
-export default withSkeleton;

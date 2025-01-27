@@ -1,7 +1,7 @@
 import styles from './Error.module.css';
 import contentData from '../../data/content.json';
 
-const Error = () => {
+export const Error = () => {
   return (
     <div className={ styles.wrapper }>
         <div className={ styles.inner }>
@@ -21,5 +21,3 @@ const Error = () => {
     </div>
   )
 }
-
-export default Error;

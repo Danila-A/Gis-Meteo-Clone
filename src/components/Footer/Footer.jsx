@@ -1,7 +1,7 @@
 import styles from './Footer.module.css';
 import contentData from '../../data/content.json';
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className={ styles.wrapper }>
         <div className={ styles.inner }>
@@ -12,5 +12,3 @@ const Footer = () => {
     </footer>
   )
 }
-
-export default Footer;

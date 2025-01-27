@@ -1,11 +1,11 @@
 import styles from './styles.module.css';
-import Search from "../Search/Search";
+import { Search } from "../Search/Search";
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchForecast } from '../../store/dataSlice';
 
 
-const HeaderSearch = () => {
+export const HeaderSearch = () => {
     const [isFocus, setIsFocus] = useState(false);
     const searchRef = useRef();   
     const dispatch = useDispatch();  
@@ -56,5 +56,3 @@ const HeaderSearch = () => {
         </>
     );
 }
-
-export default HeaderSearch;
