@@ -7,12 +7,12 @@ import { fetchForecast } from '../../store/dataSlice';
 
 export const HeaderSearch = () => {
     const [isFocus, setIsFocus] = useState(false);
-    const searchRef = useRef();   
+    const searchRef = useRef<HTMLInputElement>();   
     const dispatch = useDispatch();  
-    const body = document.querySelector('body');
+    const body = document.querySelector<HTMLBodyElement>('body')!;
 
     useEffect(()=> {
-        const handler = (event) => {
+        const handler = (event: Event) => {
             if(searchRef.current != event.target) {
                 body.style.overflow = 'visible';              
                 setIsFocus(false);
@@ -27,16 +27,18 @@ export const HeaderSearch = () => {
         body.style.overflow = 'hidden';
     }  
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: Event) => {
         event.preventDefault();
-
-        const city = searchRef.current.value;
-        setIsFocus(false); 
         
-        searchRef.current.value = '';
-        searchRef.current.blur();
-        body.style.overflow = 'visible'; 
-        city && city.trim() ? dispatch(fetchForecast(city)) : null;
+        if(searchRef.current) {
+            const city = searchRef.current.value;
+            setIsFocus(false); 
+            
+            searchRef.current.value = '';
+            searchRef.current.blur();
+            body.style.overflow = 'visible'; 
+            city && city.trim() ? dispatch(fetchForecast(city)) : null;
+        }        
     }
 
     return (

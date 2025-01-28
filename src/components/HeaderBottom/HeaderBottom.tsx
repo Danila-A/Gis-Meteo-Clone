@@ -5,7 +5,7 @@ import { BurgerIcon } from '../../icons/BurgerIcon/BurgerIcon';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 import styles from './styles.module.css';
 
-export const HeaderBottom = () => {
+export const HeaderBottom: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);   
     
     const handleClick = () => {

@@ -1,7 +1,7 @@
 import styles from './styles.module.css';
 import contentData from '../../data/content.json';
 
-export const Nav = () => {
+export const Nav: React.FC = () => {
     return (
         <div className={ styles.container }>
             <ul className={ styles.list }>
