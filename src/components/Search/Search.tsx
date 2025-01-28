@@ -1,9 +1,14 @@
 import styles from './search.module.css';
 import contentData from '../../data/content.json';
-import { forwardRef } from 'react';
+import { FormEvent, ForwardedRef, forwardRef } from 'react';
 
-export const Search = forwardRef( 
-    ({ onFocus, onSubmit }, ref) => {
+interface Props {
+    onFocus: () => void;
+    onSubmit: (event: FormEvent) => void;
+}
+
+export const Search = forwardRef(
+    ({ onFocus, onSubmit }: Props, ref: ForwardedRef<HTMLInputElement>) => {
 
         return (
             <div>
@@ -19,4 +24,4 @@ export const Search = forwardRef(
             </div>
         );
     }
-)
+);

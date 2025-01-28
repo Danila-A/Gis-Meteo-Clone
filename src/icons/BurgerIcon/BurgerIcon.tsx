@@ -1,7 +1,11 @@
 import styles from './BurgerIcon.module.css'
 import image from '../../images/icons8-hamburger-button-32.png'
 
-export const BurgerIcon = ({ handleClick }) => {
+interface Props {
+  handleClick: () => void;
+}
+
+export const BurgerIcon: React.FC<Props> = ({ handleClick }) => {
   return (
     <div 
       className={ styles.wrapper } 

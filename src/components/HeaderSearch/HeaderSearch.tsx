@@ -1,14 +1,14 @@
 import styles from './styles.module.css';
 import { Search } from "../Search/Search";
-import { useEffect, useRef, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { fetchForecast } from '../../store/dataSlice';
+import { useAppDispatch } from '../../store/hooks';
 
 
-export const HeaderSearch = () => {
+export const HeaderSearch: React.FC = () => {
     const [isFocus, setIsFocus] = useState(false);
-    const searchRef = useRef<HTMLInputElement>();   
-    const dispatch = useDispatch();  
+    const searchRef = useRef<HTMLInputElement>(null);   
+    const dispatch = useAppDispatch();  
     const body = document.querySelector<HTMLBodyElement>('body')!;
 
     useEffect(()=> {
@@ -27,7 +27,7 @@ export const HeaderSearch = () => {
         body.style.overflow = 'hidden';
     }  
 
-    const handleSubmit = (event: Event) => {
+    const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
         
         if(searchRef.current) {
@@ -44,7 +44,7 @@ export const HeaderSearch = () => {
     return (
         <>
             <div className={ styles.wrapper }>
-                <div className={ styles.search } style={ isFocus && window.innerWidth > 430 ? { minWidth: '400px' } : null}>
+                <div className={ styles.search } style={ isFocus && window.innerWidth > 430 ? { minWidth: '400px' } : undefined}>
 
                     <Search 
                         ref={ searchRef } 
@@ -54,7 +54,7 @@ export const HeaderSearch = () => {
 
                 </div>
             </div>
-            <div className={ styles.background } style={ isFocus ? { opacity: 1, zIndex: 2} : null}></div>
+            <div className={ styles.background } style={ isFocus ? { opacity: 1, zIndex: 2} : undefined}></div>
         </>
     );
 }

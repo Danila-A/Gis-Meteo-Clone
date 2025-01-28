@@ -1,11 +1,11 @@
 import { Error } from "../../components/Error/Error";
 import { Skeleton } from "../../components/Skeleton/Skeleton";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../store/hooks";
 
-export const withSkeleton = (Component) => {
-  return function WithSkeleton(props) {
-    const isLoading = useSelector(state => state.data.isLoading);
-    const error = useSelector(state => state.data.error);
+export const withSkeleton = <P extends object>(Component: React.ComponentType<P>) => {
+  return function WithSkeleton(props: P) {
+    const isLoading = useAppSelector(state => state.data.isLoading);
+    const error = useAppSelector(state => state.data.error);
 
     if (isLoading) return <Skeleton />
     if (error) return <Error />

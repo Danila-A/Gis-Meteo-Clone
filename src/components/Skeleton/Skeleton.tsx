@@ -1,6 +1,6 @@
 import styles from './Skeleton.module.css';
 
-export const Skeleton = () => {
+export const Skeleton: React.FC = () => {
   return (
     <div className={ styles.main }>
         <div className={ styles.mainInner }>

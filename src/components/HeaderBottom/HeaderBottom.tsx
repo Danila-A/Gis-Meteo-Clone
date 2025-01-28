@@ -20,9 +20,7 @@ export const HeaderBottom: React.FC = () => {
                 <HeaderTimePointsList />
 
                 <BurgerIcon handleClick={ handleClick }/>
-                {
-                    isVisible && <MobileMenu setIsVisible={ setIsVisible } />
-                }
+                {isVisible && <MobileMenu setIsVisible={ setIsVisible } />}
 
             </div>
         </div>

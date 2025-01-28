@@ -1,7 +1,7 @@
 import styles from './Error.module.css';
 import contentData from '../../data/content.json';
 
-export const Error = () => {
+export const Error: React.FC = () => {
   return (
     <div className={ styles.wrapper }>
         <div className={ styles.inner }>

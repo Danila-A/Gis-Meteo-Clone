@@ -1,7 +1,7 @@
 import styles from './Footer.module.css';
 import contentData from '../../data/content.json';
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
     <footer className={ styles.wrapper }>
         <div className={ styles.inner }>

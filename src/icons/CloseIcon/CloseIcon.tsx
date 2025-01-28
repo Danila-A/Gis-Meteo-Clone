@@ -1,7 +1,11 @@
 import img from '../../images/icons8-cancel-50.png';
 import styles from './CloseIcon.module.css';
 
-export const CloseIcon = ({ setIsVisible }) => {
+interface Props {
+  setIsVisible: (value: React.SetStateAction<boolean>) => void;
+}
+
+export const CloseIcon: React.FC<Props> = ({ setIsVisible }) => {
   const handleClick = () => {
     setIsVisible(false);
   }

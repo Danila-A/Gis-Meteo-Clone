@@ -1,7 +1,12 @@
+import { DayBlock } from '../../interfaces';
 import { ThreeDaysForecastBlock } from '../ThreeDaysForecastBlock/ThreeDaysForecastBlock';
 import styles from './ThreeDaysForecast.module.css';
 
-export const ThreeDaysForecast = ({ forecast }) => {
+interface Props {
+    forecast: DayBlock[];
+}
+
+export const ThreeDaysForecast: React.FC<Props> = ({ forecast }) => {
     return (
     <div>
         <div className={ styles.inner }>

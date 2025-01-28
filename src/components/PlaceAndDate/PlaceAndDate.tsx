@@ -1,7 +1,12 @@
 import styles from './PlaceAndDate.module.css';
 import contentData from '../../data/content.json'
 
-export const PlaceAndDate = ({ date, city }) => {
+interface Props {
+  date?: string;
+  city?: string;
+}
+
+export const PlaceAndDate: React.FC<Props> = ({ date, city }) => {
   return (
     <div className={ styles.placeAndDate }>
         <h3 className={ styles.date }>

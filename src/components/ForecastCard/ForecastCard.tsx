@@ -1,6 +1,11 @@
+import { HourList } from '../../interfaces';
 import styles from './ForecastCard.module.css';
 
-export const ForecastCard = ({ item }) => {
+interface Props {
+    item: HourList;
+}
+
+export const ForecastCard: React.FC<Props> = ({ item }) => {
     return (
     <div className={ styles.card } >
         <div className={ styles.inner }>

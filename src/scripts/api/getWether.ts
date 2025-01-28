@@ -1,22 +1,21 @@
 import axios from "axios";
+import { Weather } from "../../interfaces";
 
-export async function getTestWeather(city) {
-    const configuration = {
-        baseURL: 'http://api.weatherapi.com/v1/forecast.json',
-        params: {
-            key: '0d65cb3ac45940d289a191409241112',
-            q: city,
-            days: 13,
-        }
-    }
+const API_KEY=import.meta.env.VITE_API_KEY;
 
-    const apiRequest = axios.create(configuration);
-
-    try {
-        const response = await apiRequest.get();
-        return response;
+export async function getTestWeather(city: string): Promise<Weather | null> {
+   try {
+        const response = await axios.get<Weather>('http://api.weatherapi.com/v1/forecast.json', {
+            params: {
+                key: API_KEY,
+                q: city,
+                days: 13,
+            }
+        });
+        return response.data;
     }
     catch(error) {
         console.error(error);
+        return null;
     }
 }

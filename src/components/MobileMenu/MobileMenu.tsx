@@ -1,15 +1,20 @@
 import contentData from '../../data/content.json'
 import styles from './MobileMenu.module.css';
 import { CloseIcon } from '../../icons/CloseIcon/CloseIcon';
-import { useDispatch, useSelector } from 'react-redux';
 import { changeKindForecast } from '../../store/dataSlice';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
-export const MobileMenu = ({ setIsVisible }) => {
-    const dispatch = useDispatch();
-    const weatherData = useSelector(state => state.data.forecast);
+interface Props {
+    setIsVisible: (value: React.SetStateAction<boolean>) => void;
+}
 
-    const handleClick = (event) => {
-        dispatch(changeKindForecast( { kindForecast: Number(event.target.getAttribute('data-value')) }));
+export const MobileMenu: React.FC<Props> = ({ setIsVisible }) => {
+    const dispatch = useAppDispatch();
+    const weatherData = useAppSelector(state => state.data.forecast);
+
+    const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        const link: HTMLAnchorElement = event.target as HTMLAnchorElement;
+        dispatch(changeKindForecast(Number(link?.getAttribute('data-value'))));
         setIsVisible(false);
     }
 
