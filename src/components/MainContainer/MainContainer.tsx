@@ -6,11 +6,12 @@ import { withSkeleton } from '../../scripts/hocs/withSkeleton';
 import { useFilter } from '../../scripts/hooks/useFilter';
 import { DayBlock, HourList } from '../../interfaces';
 import { useAppSelector } from '../../store/hooks';
+import { selectForecast, selectKindForecast } from '../../store/dataSlice';
 
 
 const MainContainer: React.FC = () => {
-    const kindForecast: number = useAppSelector(state => state.data.kindForecast);
-    const weatherData = useFilter(useAppSelector(state => state.data.forecast));    
+    const kindForecast: number = useAppSelector(selectKindForecast);
+    const weatherData = useFilter(useAppSelector(selectForecast));    
 
     return (
         <main className={ styles.main }>

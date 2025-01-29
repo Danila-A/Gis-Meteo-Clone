@@ -35,6 +35,12 @@ export const fetchForecast = createAsyncThunk<Weather, string, { rejectValue: st
 const dataSlice = createSlice({
     name: 'data',
     initialState,
+    selectors : {
+        selectForecast: (state) => state.forecast,
+        selectKindForecast: (state) => state.kindForecast,
+        selectIsLoading: (state) => state.isLoading,
+        selectError: (state) => state.error,
+    },
     reducers: {
         changeKindForecast(state, action: PayloadAction<number>) {
             state.kindForecast = action.payload;
@@ -58,8 +64,10 @@ const dataSlice = createSlice({
                 state.isLoading = false;
                 if(action.payload) state.error = action.payload;                
             })
-    }
+    },
 });
 
 export const { changeKindForecast, toggleLoadingIndicator } = dataSlice.actions;
+export const { selectForecast, selectKindForecast, selectIsLoading, selectError } = dataSlice.selectors;
+
 export default dataSlice.reducer;

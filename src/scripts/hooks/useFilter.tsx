@@ -1,10 +1,11 @@
 import contentData from '../../data/content.json'
 import { OneDayForecast, ThreeDayForecast, Weather } from '../../interfaces';
+import { selectKindForecast } from '../../store/dataSlice';
 import { useAppSelector } from '../../store/hooks';
 import { reformatDate } from '../helpers/reformatDate';
 
 export const useFilter = (weatherData: Weather | null): OneDayForecast | ThreeDayForecast | undefined => {
-    const kindForecast: number = useAppSelector(state => state.data.kindForecast);
+    const kindForecast: number = useAppSelector(selectKindForecast);
 
     if(weatherData) {
         if(kindForecast === 0 || kindForecast === 1) {
