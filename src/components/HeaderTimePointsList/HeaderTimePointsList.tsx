@@ -1,12 +1,12 @@
 import styles from './styles.module.css';
 import contentData from '../../data/content.json'
-import { changeKindForecast } from '../../store/dataSlice';
+import { changeKindForecast, selectForecast } from '../../store/dataSlice';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
 
 export const HeaderTimePointsList = () => {
     const dispatch = useAppDispatch();
-    const weatherData = useAppSelector(state => state.data.forecast);
+    const weatherData = useAppSelector(selectForecast);
 
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         const link: HTMLAnchorElement = event.target as HTMLAnchorElement;

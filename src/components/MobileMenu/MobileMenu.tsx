@@ -1,7 +1,7 @@
 import contentData from '../../data/content.json'
 import styles from './MobileMenu.module.css';
 import { CloseIcon } from '../../icons/CloseIcon/CloseIcon';
-import { changeKindForecast } from '../../store/dataSlice';
+import { changeKindForecast, selectForecast } from '../../store/dataSlice';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 
 export const MobileMenu: React.FC<Props> = ({ setIsVisible }) => {
     const dispatch = useAppDispatch();
-    const weatherData = useAppSelector(state => state.data.forecast);
+    const weatherData = useAppSelector(selectForecast);
 
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         const link: HTMLAnchorElement = event.target as HTMLAnchorElement;
