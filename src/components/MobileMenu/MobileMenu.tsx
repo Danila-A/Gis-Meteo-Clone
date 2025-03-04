@@ -3,6 +3,7 @@ import styles from './MobileMenu.module.css';
 import { CloseIcon } from '../../icons/CloseIcon/CloseIcon';
 import { changeKindForecast, selectForecast } from '../../store/dataSlice';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import reactDOM from 'react-dom';
 
 interface Props {
     setIsVisible: (value: React.SetStateAction<boolean>) => void;
@@ -18,7 +19,7 @@ export const MobileMenu: React.FC<Props> = ({ setIsVisible }) => {
         setIsVisible(false);
     }
 
-    return (
+    return reactDOM.createPortal(
         <>
             <div className={ styles.menu }>
                 <div className={ styles.inner }>
@@ -44,6 +45,7 @@ export const MobileMenu: React.FC<Props> = ({ setIsVisible }) => {
 
                 </div>
             </div>
-        </>                
+        </>,
+        document.body                
     )
 }
