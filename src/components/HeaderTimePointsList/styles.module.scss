@@ -8,6 +8,10 @@ $list_item_hover_bg: #40b3ff;
     align-items: center;
 }
 .wrapper {
+    @media (max-width: 600px) {
+        display: none;
+    }
+
     .list {
         display: flex;
         color: $list_text_color;
@@ -24,9 +28,4 @@ $list_item_hover_bg: #40b3ff;
         height: 40px;
     }
     
-}
-@media (max-width: 600px) {
-    .wrapper {
-        display: none;
-    }
 }

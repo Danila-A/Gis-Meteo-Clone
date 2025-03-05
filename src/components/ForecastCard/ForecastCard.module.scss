@@ -10,6 +10,15 @@ $precipitation_text_color: #00a4ff;
     &:last-child {
         margin-right: 0;
     }
+    @media (max-width: 600px) {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
     .inner {
         display: flex;
         flex-direction: column; 
@@ -21,6 +30,14 @@ $precipitation_text_color: #00a4ff;
             text-align: center;
             margin-bottom: 20px;
         }
+        @media (max-width: 600px) {
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+            div {
+                margin-bottom: 0;
+            }
+        }
     }
     .title {
         line-height: 18px;
@@ -29,6 +46,10 @@ $precipitation_text_color: #00a4ff;
     .temperature {
         background-color: $temperature_bg; 
         border-bottom: 1px solid $temperature_border_color;
+        @media (max-width: 600px) {
+            border: 1px solid $temperature_border_color;
+            border-radius: 10px;
+        }
     }
     .windSpeed {
         background-image: $wind_speed_bg_gradient;
@@ -45,14 +66,6 @@ $precipitation_text_color: #00a4ff;
         padding-bottom: 10px;
     }
     @media (max-width: 600px) {
-        .inner {
-            flex-direction: row;
-            align-items: center;
-            gap: 5px;
-            div {
-                margin-bottom: 0;
-            }
-        }
         .icon {
             flex-basis: 20%;
             flex-shrink: 1;
@@ -62,10 +75,6 @@ $precipitation_text_color: #00a4ff;
                 height: 40px;
             }
         }
-        .temperature {
-            border: 1px solid $temperature_border_color;
-            border-radius: 10px;
-        }
         .inner,
         .title,
         .temperature,
@@ -74,16 +83,6 @@ $precipitation_text_color: #00a4ff;
             padding-top: 5px;
             padding-bottom: 5px;
             font-size: 12px;
-        }
-    }
-}
-@media (max-width: 600px) {
-    .card {
-        flex-basis: 100%;
-        margin-bottom: 10px;
-        margin-right: 0;
-        &:last-child {
-            margin-bottom: 0;
         }
     }
 }
