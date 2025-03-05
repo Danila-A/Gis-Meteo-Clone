@@ -1,3 +1,5 @@
+$bg_color: #00000088;
+
 .wrapper {
     margin-right: 20px;
     padding-top: 5px;
@@ -5,18 +7,18 @@
     position: relative;
     min-height: 40px;
     min-width: 210px;
-}
-.search {
-    position: absolute;
-    left: 0;
-    top: 5px;
-    z-index: 3;
-    min-width: 210px;
-    transition: min-width .5s ease;
+    .search {
+        position: absolute;
+        left: 0;
+        top: 5px;
+        z-index: 3;
+        min-width: 210px;
+        transition: min-width .5s ease;
+    }
 }
 .background {
     position: absolute;
-    background-color: #00000088;
+    background-color: $bg_color;
     min-width: 100%;
     min-height: 100%;
     left: 0;

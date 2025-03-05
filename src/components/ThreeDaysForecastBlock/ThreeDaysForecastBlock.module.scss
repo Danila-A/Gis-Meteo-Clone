@@ -1,0 +1,28 @@
+.container {
+    flex-grow: 1; 
+    margin-right: 15px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .title {
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .data {
+        display: flex;
+    }
+    @media (max-width: 600px) {
+        .data {
+            flex-direction: column;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+}

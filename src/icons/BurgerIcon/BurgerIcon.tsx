@@ -1,4 +1,4 @@
-import styles from './BurgerIcon.module.css'
+import styles from './BurgerIcon.module.scss'
 import image from '../../images/icons8-hamburger-button-32.png'
 
 interface Props {

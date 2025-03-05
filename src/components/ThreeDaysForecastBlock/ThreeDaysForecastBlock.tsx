@@ -1,4 +1,4 @@
-import styles from './ThreeDaysForecastBlock.module.css';
+import styles from './ThreeDaysForecastBlock.module.scss';
 import { ForecastCard } from '../ForecastCard/ForecastCard';
 import { DayHours } from '../../interfaces';
 import React from 'react';

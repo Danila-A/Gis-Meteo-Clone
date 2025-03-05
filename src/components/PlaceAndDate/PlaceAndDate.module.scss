@@ -2,9 +2,9 @@
     display: flex; 
     justify-content: space-between; 
     font-size: 22px;
-}
-.date::first-letter {
-    text-transform: capitalize;
+    .date::first-letter {
+        text-transform: capitalize;
+    }
 }
 @media (max-width: 600px) {
     .placeAndDate {

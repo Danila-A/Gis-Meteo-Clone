@@ -1,4 +1,4 @@
-import styles from './search.module.css';
+import styles from './search.module.scss';
 import contentData from '../../data/content.json';
 import { FormEvent, ForwardedRef, forwardRef } from 'react';
 

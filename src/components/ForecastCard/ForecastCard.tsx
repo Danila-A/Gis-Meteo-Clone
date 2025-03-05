@@ -1,5 +1,5 @@
 import { HourList } from '../../interfaces';
-import styles from './ForecastCard.module.css';
+import styles from './ForecastCard.module.scss';
 
 interface Props {
     item: HourList;

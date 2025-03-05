@@ -1,4 +1,4 @@
-import styles from './PlaceAndDate.module.css';
+import styles from './PlaceAndDate.module.scss';
 import contentData from '../../data/content.json'
 
 interface Props {

@@ -1,0 +1,32 @@
+$list_text_color: #ffffff;
+$list_item_hover_bg: #40b3ff;
+
+.wrapper,
+.listItem,
+.button {
+    display: flex;
+    align-items: center;
+}
+.wrapper {
+    .list {
+        display: flex;
+        color: $list_text_color;
+    }
+    .listItem {
+        cursor: pointer;
+        &:hover {
+            background-color: $list_item_hover_bg;
+        }
+    }
+    .button {
+        padding-right: 10px;
+        padding-left: 10px;
+        height: 40px;
+    }
+    
+}
+@media (max-width: 600px) {
+    .wrapper {
+        display: none;
+    }
+}

@@ -1,0 +1,16 @@
+$hover_text_color: #ff0000;
+
+.logo {
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    transform: translateY(-5px);
+    svg {
+        &:hover {
+            path {
+                fill: $hover_text_color;
+            }
+        }
+    }
+}

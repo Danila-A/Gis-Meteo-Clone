@@ -1,5 +1,5 @@
 import { Nav } from '../Nav/Nav';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 export const HeaderNav: React.FC = () => {
     return (
