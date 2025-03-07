@@ -1,3 +1,5 @@
+@import '../../styles/global.scss';
+
 $text_color: #9c9b9b;
 
 .wrapper {
@@ -7,9 +9,7 @@ $text_color: #9c9b9b;
     flex-shrink: 1;
 
     .inner {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @extend %flex-center;
         padding: 20px;
     }
     .text {

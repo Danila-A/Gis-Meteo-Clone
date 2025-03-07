@@ -1,12 +1,12 @@
+@import '../../styles/global.scss';
+
 .wrapper {
     height: 100%;
     width: 100%;
 
     .inner {
-        display: flex;
+        @extend %flex-center;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         height: 100%;
         text-align: center;
     }

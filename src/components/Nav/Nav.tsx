@@ -1,4 +1,4 @@
-import styles from './styles.module.scss';
+import styles from './Nav.module.scss';
 import contentData from '../../data/content.json';
 
 export const Nav: React.FC = () => {

@@ -1,4 +1,4 @@
-import styles from './styles.module.scss';
+import styles from './HeaderTimePointsList.module.scss';
 import contentData from '../../data/content.json'
 import { changeKindForecast, selectForecast } from '../../store/dataSlice';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
