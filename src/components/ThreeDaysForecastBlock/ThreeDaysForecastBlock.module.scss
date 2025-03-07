@@ -1,14 +1,13 @@
 .container {
     flex-grow: 1; 
     margin-right: 15px;
-    @media (max-width: 600px) {
-        margin-right: 0;
-        margin-bottom: 30px;
-    }
-
     &:last-child {
         margin-right: 0;
     }
+    @media (max-width: 600px) {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }    
 
     .title {
         margin-bottom: 10px;

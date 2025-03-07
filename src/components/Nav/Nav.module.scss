@@ -1,11 +1,12 @@
+@use '../../styles/global.scss';
+
 $text_color: #0099ff;
 
 .container {
     height: 30px;
     padding-left: 20px;
     border-left: 1px solid #0000001f;
-    display: flex;
-    align-items: center;
+    @include global.flex_center($centerType: vertical);
     .list {
         font-size: 17px;
         color: $text_color;

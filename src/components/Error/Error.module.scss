@@ -1,11 +1,11 @@
-@import '../../styles/global.scss';
+@use '../../styles/global.scss';
 
 .wrapper {
     height: 100%;
     width: 100%;
 
     .inner {
-        @extend %flex-center;
+        @include global.flex_center($centerType: all);
         flex-direction: column;
         height: 100%;
         text-align: center;

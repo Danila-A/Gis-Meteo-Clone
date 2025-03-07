@@ -1,3 +1,5 @@
+@use '../../styles/global.scss';
+
 $bg_color: #0099ff;
 
 .headerBottom {
@@ -6,8 +8,7 @@ $bg_color: #0099ff;
     .inner {
         width: 70%;
         margin: 0 auto;
-        display: flex;
-        align-items: center;
+        @include global.flex_center($centerType: vertical);
         @media screen and (max-width: 1024px) {
             width: 100%;
             padding-right: 10px;

@@ -1,4 +1,18 @@
 $bg_gradient: linear-gradient(-90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%);
+@mixin animation {
+    & {
+        background-size: 400% 400%;
+        animation: pulse 1.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+        0% {
+            background-position: 0% 0%;
+        }
+        100% {
+            background-position: -135% 0%;
+        }
+    }
+}
 
 .main {
     flex-grow: 1;
@@ -31,10 +45,11 @@ $bg_gradient: linear-gradient(-90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%);
                 width: 100px;
                 border-radius: 10px;
                 background: $bg_gradient;
+                @include animation();
 
                 &::first-letter {
                     text-transform: capitalize;
-                }
+                } 
             }
         }
 
@@ -55,6 +70,10 @@ $bg_gradient: linear-gradient(-90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%);
                 margin-right: 5px;
                 border-radius: 10px;
                 background: $bg_gradient;
+                &:last-child {
+                    margin-right: 0;
+                }
+                @include animation();
                 @media (max-width: 600px) {
                     flex-basis: 100%;
                     margin-bottom: 10px;
@@ -64,26 +83,8 @@ $bg_gradient: linear-gradient(-90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%);
                     &:last-child {
                         margin-bottom: 0;
                     }
-                }
-
-                &:last-child {
-                    margin-right: 0;
-                }
+                }                
             }
-        }
-
-        .titleData, .item {
-            background-size: 400% 400%;
-            animation: pulse 1.2s ease-in-out infinite;
-        }
-    }
-    
-}
-@keyframes pulse {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: -135% 0%;
+        }       
     }
 }

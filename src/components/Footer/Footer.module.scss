@@ -1,4 +1,4 @@
-@import '../../styles/global.scss';
+@use '../../styles/global.scss';
 
 $text_color: #9c9b9b;
 
@@ -9,7 +9,7 @@ $text_color: #9c9b9b;
     flex-shrink: 1;
 
     .inner {
-        @extend %flex-center;
+        @include global.flex_center($centerType: all);
         padding: 20px;
     }
     .text {

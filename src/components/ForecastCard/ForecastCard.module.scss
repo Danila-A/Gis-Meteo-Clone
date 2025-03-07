@@ -1,3 +1,5 @@
+@use '../../styles/global.scss';
+
 $temperature_bg: #bfe8ff;
 $temperature_border_color: #00a4ff;
 $wind_speed_bg_gradient: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(235, 236, 237, 1) 30%);
@@ -20,9 +22,8 @@ $precipitation_text_color: #00a4ff;
     }
 
     .inner {
-        display: flex;
+        @include global.flex_center($centerType: vertical);
         flex-direction: column; 
-        align-items: center;
         border-radius: 10px;
         box-shadow: 0 0 5px #00000033;
         div {

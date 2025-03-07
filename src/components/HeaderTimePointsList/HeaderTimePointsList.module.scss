@@ -1,11 +1,12 @@
+@use '../../styles/global.scss';
+
 $list_text_color: #ffffff;
 $list_item_hover_bg: #40b3ff;
 
 .wrapper,
 .listItem,
 .button {
-    display: flex;
-    align-items: center;
+    @include global.flex_center($centerType: vertical);
 }
 .wrapper {
     @media (max-width: 600px) {

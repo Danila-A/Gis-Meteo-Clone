@@ -1,4 +1,4 @@
-@import '../../styles/global.scss';
+@use '../../styles/global.scss';
 
 $menu_bg: #0099ff;
 $list_item_text_color: #ffffff;
@@ -16,7 +16,7 @@ $list_item_text_color: #ffffff;
         flex-direction: column;
         background-color: $menu_bg;
         .menuList {
-            @extend %flex-center;
+            @include global.flex_center($centerType: all);
             flex-direction: column;
             flex-grow: 1;
             .listItem {
