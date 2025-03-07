@@ -1,0 +1,17 @@
+@use '../../styles/global.scss';
+
+$hover_text_color: #ff0000;
+
+.logo {
+    min-width: 150px;
+    @include global.flex_center($centerType: vertical);
+    margin-right: 30px;
+    transform: translateY(-5px);
+    svg {
+        &:hover {
+            path {
+                fill: $hover_text_color;
+            }
+        }
+    }
+}

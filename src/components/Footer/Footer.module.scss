@@ -1,0 +1,27 @@
+@use '../../styles/global.scss';
+
+$text_color: #9c9b9b;
+
+.wrapper {
+    width: 100%;
+    flex-basis: 5%;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    .inner {
+        @include global.flex_center($centerType: all);
+        padding: 20px;
+    }
+    .text {
+        font-size: 20px;
+        text-align: center;
+        color: $text_color;
+        &::first-letter {
+            text-transform: capitalize;
+        }
+        @media (max-width: 430px) {
+            font-size: 14px;
+        }
+    }
+}
+

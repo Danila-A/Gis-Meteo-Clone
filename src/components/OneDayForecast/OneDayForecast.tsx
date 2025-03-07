@@ -1,4 +1,4 @@
-import styles from './OneDayForecast.module.css';
+import styles from './OneDayForecast.module.scss';
 import { ForecastCard } from '../ForecastCard/ForecastCard';
 import { HourList } from '../../interfaces';
 

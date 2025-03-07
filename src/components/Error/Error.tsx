@@ -1,4 +1,4 @@
-import styles from './Error.module.css';
+import styles from './Error.module.scss';
 import contentData from '../../data/content.json';
 
 export const Error: React.FC = () => {

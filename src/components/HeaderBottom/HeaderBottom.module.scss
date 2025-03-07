@@ -1,0 +1,18 @@
+@use '../../styles/global.scss';
+
+$bg_color: #0099ff;
+
+.headerBottom {
+    background-color: $bg_color;
+    
+    .inner {
+        width: 70%;
+        margin: 0 auto;
+        @include global.flex_center($centerType: vertical);
+        @media screen and (max-width: 1024px) {
+            width: 100%;
+            padding-right: 10px;
+            padding-left: 10px;
+        }    
+    }
+}

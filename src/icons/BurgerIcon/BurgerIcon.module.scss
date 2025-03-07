@@ -2,9 +2,7 @@
     display: none;
     width: 100%;
     justify-content: end;
-}
-@media (max-width: 600px) {
-    .wrapper {
+    @media (max-width: 600px) {
         display: flex;
     }
 }

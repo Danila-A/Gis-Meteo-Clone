@@ -1,4 +1,4 @@
-import styles from './Main.module.css';
+import styles from './Main.module.scss';
 import { PlaceAndDate } from '../PlaceAndDate/PlaceAndDate';
 import { OneDayForecast } from '../OneDayForecast/OneDayForecast';
 import { ThreeDaysForecast } from '../ThreeDaysForecast/ThreeDaysForecast';

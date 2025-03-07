@@ -1,5 +1,5 @@
 import contentData from '../../data/content.json'
-import styles from './MobileMenu.module.css';
+import styles from './MobileMenu.module.scss';
 import { CloseIcon } from '../../icons/CloseIcon/CloseIcon';
 import { changeKindForecast, selectForecast } from '../../store/dataSlice';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';

@@ -1,5 +1,5 @@
 import img from '../../images/icons8-cancel-50.png';
-import styles from './CloseIcon.module.css';
+import styles from './CloseIcon.module.scss';
 
 interface Props {
   setIsVisible: (value: React.SetStateAction<boolean>) => void;

@@ -1,0 +1,31 @@
+@use '../../styles/global.scss';
+
+$list_text_color: #ffffff;
+$list_item_hover_bg: #40b3ff;
+
+.wrapper,
+.listItem,
+.button {
+    @include global.flex_center($centerType: vertical);
+}
+.wrapper {
+    @media (max-width: 600px) {
+        display: none;
+    }
+
+    .list {
+        display: flex;
+        color: $list_text_color;
+    }
+    .listItem {
+        cursor: pointer;
+        &:hover {
+            background-color: $list_item_hover_bg;
+        }
+    }
+    .button {
+        padding-right: 10px;
+        padding-left: 10px;
+        height: 40px;
+    }   
+}

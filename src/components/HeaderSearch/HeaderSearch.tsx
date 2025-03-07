@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import styles from './HeaderSearch.module.scss';
 import { Search } from "../Search/Search";
 import { FormEvent, useEffect, useRef, useState } from 'react';
 import { fetchForecast } from '../../store/dataSlice';
