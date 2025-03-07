@@ -1,0 +1,89 @@
+@use '../../styles/global.scss';
+
+$temperature_bg: #bfe8ff;
+$temperature_border_color: #00a4ff;
+$wind_speed_bg_gradient: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(235, 236, 237, 1) 30%);
+$precipitation_text_color: #00a4ff;
+
+.card {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-right: 5px;
+    &:last-child {
+        margin-right: 0;
+    }
+    @media (max-width: 600px) {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .inner {
+        @include global.flex_center($centerType: vertical);
+        flex-direction: column; 
+        border-radius: 10px;
+        box-shadow: 0 0 5px #00000033;
+        div {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 600px) {
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+            div {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .title {
+        line-height: 18px;
+        font-size: 18px;
+    }
+    .temperature {
+        background-color: $temperature_bg; 
+        border-bottom: 1px solid $temperature_border_color;
+        @media (max-width: 600px) {
+            border: 1px solid $temperature_border_color;
+            border-radius: 10px;
+        }
+    }
+    .windSpeed {
+        background-image: $wind_speed_bg_gradient;
+        transform: scale(0.9) skew(-12deg);
+    }
+    .precipitation {
+        color: $precipitation_text_color;
+    }
+    .title,
+    .temperature,
+    .windSpeed,
+    .precipitation {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    @media (max-width: 600px) {
+        .icon {
+            flex-basis: 20%;
+            flex-shrink: 1;
+            flex-grow: 0;
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .inner,
+        .title,
+        .temperature,
+        .windSpeed,
+        .precipitation {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 12px;
+        }
+    }
+}

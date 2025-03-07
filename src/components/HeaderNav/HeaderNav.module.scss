@@ -1,0 +1,5 @@
+@use '../../styles/global.scss';
+
+.nav {
+    @include global.flex_center($centerType: vertical);
+}

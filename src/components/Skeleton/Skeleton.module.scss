@@ -1,0 +1,90 @@
+$bg_gradient: linear-gradient(-90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%);
+@mixin animation {
+    & {
+        background-size: 400% 400%;
+        animation: pulse 1.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+        0% {
+            background-position: 0% 0%;
+        }
+        100% {
+            background-position: -135% 0%;
+        }
+    }
+}
+
+.main {
+    flex-grow: 1;
+
+    .mainInner {
+        width: 70%;
+        margin: 0 auto;
+        padding: 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 160px;
+        @media (max-width: 1024px) {
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+            padding-top: 30px;
+        }
+
+        .placeAndDate {
+            display: flex; 
+            justify-content: space-between; 
+            @media (max-width: 600px) {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .titleData {
+                height: 20px;
+                width: 100px;
+                border-radius: 10px;
+                background: $bg_gradient;
+                @include animation();
+
+                &::first-letter {
+                    text-transform: capitalize;
+                } 
+            }
+        }
+
+        .inner {
+            display: flex;
+            gap: 10px;
+            padding-top: 20px;
+            @media (max-width: 600px) {
+                gap: 0;
+                flex-wrap: wrap;
+            }
+            
+            .item {
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 100px;
+                height: 320px;
+                margin-right: 5px;
+                border-radius: 10px;
+                background: $bg_gradient;
+                &:last-child {
+                    margin-right: 0;
+                }
+                @include animation();
+                @media (max-width: 600px) {
+                    flex-basis: 100%;
+                    margin-bottom: 10px;
+                    margin-right: 0;
+                    height: 40px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }                
+            }
+        }       
+    }
+}

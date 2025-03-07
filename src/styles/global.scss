@@ -57,3 +57,16 @@ table {
 	display: flex;
 	flex-direction: column;
 }
+@mixin flex_center($centerType) {
+	@if $centerType == all {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	} @else if $centerType == horizontal {
+		display: flex;
+		justify-content: center;
+	} @else if $centerType == vertical {
+		display: flex;
+		align-items: center;
+	}
+}

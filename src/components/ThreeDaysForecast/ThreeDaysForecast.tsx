@@ -1,6 +1,6 @@
 import { DayBlock } from '../../interfaces';
 import { ThreeDaysForecastBlock } from '../ThreeDaysForecastBlock/ThreeDaysForecastBlock';
-import styles from './ThreeDaysForecast.module.css';
+import styles from './ThreeDaysForecast.module.scss';
 
 interface Props {
     forecast: DayBlock[];

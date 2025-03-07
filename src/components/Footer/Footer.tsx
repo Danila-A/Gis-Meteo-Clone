@@ -1,4 +1,4 @@
-import styles from './Footer.module.css';
+import styles from './Footer.module.scss';
 import contentData from '../../data/content.json';
 
 export const Footer: React.FC = () => {

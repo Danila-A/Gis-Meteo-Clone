@@ -1,5 +1,5 @@
 import { Logo } from '../../icons/Logo';
-import styles from './styles.module.css';
+import styles from './HeaderLogo.module.scss';
 
 export const HeaderLogo: React.FC = () => {
     return (
