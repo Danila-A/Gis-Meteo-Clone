@@ -1,27 +1,45 @@
 import styles from './Search.module.scss';
 import contentData from '../../data/content.json';
-import { FormEvent, ForwardedRef, forwardRef } from 'react';
+import { FC, useEffect } from 'react';
+import { InputProps } from '../../interfaces';
 
-interface Props {
-    onFocus: () => void;
-    onSubmit: (event: FormEvent) => void;
-}
+export const Search: FC<InputProps> = ({register, required, setIsFocus, pattern, isFocus, body}) => {
+    
+    let input: HTMLInputElement | null;
 
-export const Search = forwardRef(
-    ({ onFocus, onSubmit }: Props, ref: ForwardedRef<HTMLInputElement>) => {
+    useEffect(() => {
+        input = document.querySelector<HTMLInputElement>(`.${styles.input}`);
+        !isFocus && input?.blur();
+        console.log(isFocus);
+        
+    }, []);
 
-        return (
-            <div>
-                <form action="" onSubmit={(event) => onSubmit(event)}>
-                    <input 
-                        ref={ ref } 
-                        onFocus={ onFocus } 
-                        className={ styles.input } 
-                        type="text" 
-                        placeholder={ contentData.headerBottom.searchPlaceHolder } 
-                    />
-                </form>
-            </div>
-        );
+    useEffect(()=> {
+        const handler = (event: Event) => {
+            if(input != event.target) {
+                console.log('inside in the condition');
+                
+                body.style.overflow = 'visible';              
+                setIsFocus(false);
+            }
+        }
+        document.addEventListener('click', handler);
+    }, []);
+
+    const handleOnFocus = () => {
+        setIsFocus(true);
+        body.style.overflow = 'hidden';
     }
-);
+
+    return (
+        <div>
+            <input
+                {...register('cityName', { required, pattern })}
+                onFocus={ handleOnFocus } 
+                className={ styles.input } 
+                placeholder={ contentData.headerBottom.searchPlaceHolder }
+                type="text"
+            />
+        </div>
+    );
+}

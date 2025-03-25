@@ -1,3 +1,5 @@
+import { UseFormRegister } from "react-hook-form";
+
 export interface Weather {
     current: Current;
     forecast: Forecast;
@@ -173,4 +175,17 @@ export interface RequestConfiguration {
     key: string;
     q: string;
     days: number;
+}
+
+export interface formFields {
+    cityName: string;
+}
+
+export interface InputProps {
+    register: UseFormRegister<formFields>;
+    required: boolean;
+    setIsFocus: React.Dispatch<React.SetStateAction<boolean>>;
+    pattern: RegExp;
+    isFocus: boolean;
+    body: HTMLBodyElement;
 }
