@@ -9,10 +9,10 @@ interface Props {
 export const PlaceAndDate: React.FC<Props> = ({ date, city }) => {
   return (
     <div className={ styles.placeAndDate }>
-        <h3 className={ styles.date }>
-            { contentData.body.dateTitle } { date }
-        </h3>
-        <h1>{ city }</h1>
+      <h3 className={ styles.date }>
+        { contentData.body.dateTitle } { date }
+      </h3>
+      <h1>{ city }</h1>
     </div>
-  )
+  );
 }

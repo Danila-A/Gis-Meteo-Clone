@@ -8,19 +8,19 @@ interface Props {
 
 export const ThreeDaysForecast: React.FC<Props> = ({ forecast }) => {
     return (
-    <div>
-        <div className={ styles.inner }>
-            {
-                forecast.map((item, index) => {
-                    return (
-                        <ThreeDaysForecastBlock 
-                            key={ index }    
-                            day={ item } 
-                        />
-                    )
-                })
-            }
+        <div>
+            <div className={ styles.inner }>
+                {
+                    forecast.map((item, index) => {
+                        return (
+                            <ThreeDaysForecastBlock 
+                                key={ index }    
+                                day={ item } 
+                            />
+                        )
+                    })
+                }
+            </div>
         </div>
-    </div>
-    )
+    );
 }

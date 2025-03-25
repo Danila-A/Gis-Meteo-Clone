@@ -22,5 +22,5 @@ export const OneDayForecast: React.FC<Props> = ({ forecast }) => {
 
         </div>
     </div>
-  )
+  );
 }

@@ -19,5 +19,5 @@ export const Error: React.FC = () => {
 
         </div>
     </div>
-  )
+  );
 }

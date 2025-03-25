@@ -47,5 +47,5 @@ export const MobileMenu: React.FC<Props> = ({ setIsVisible }) => {
             </div>
         </>,
         document.body                
-    )
+    );
 }

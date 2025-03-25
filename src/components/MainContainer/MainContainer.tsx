@@ -27,7 +27,7 @@ const MainContainer: React.FC = () => {
 
             </div>
         </main>
-    )
+    );
 }
 
 export const MainContainerWithSkeleton = withSkeleton(MainContainer);

@@ -29,5 +29,5 @@ export const ThreeDaysForecastBlock: React.FC<Props> = ({ day }) => {
         
       </div>
     </div>
-  )
+  );
 }
