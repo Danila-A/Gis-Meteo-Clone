@@ -35,14 +35,13 @@ const dataSlice = createAppSlice({
             async (city: string, { rejectWithValue }) => {
 
                 const configuration: RequestConfiguration = {
-                    url: BASE_URL,
                     key: API_KEY,
                     q: city,
                     days: 3,
                 }
                 
                 try {
-                    const response = await axios.get<Weather>('http://api.weatherapi.com/v1/forecast.json', {
+                    const response = await axios.get<Weather>(BASE_URL, {
                         params: configuration,
                     });
 
