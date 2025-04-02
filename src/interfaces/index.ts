@@ -169,7 +169,6 @@ export interface State {
 }
 
 export interface RequestConfiguration {
-    url: string;
     key: string;
     q: string;
     days: number;
