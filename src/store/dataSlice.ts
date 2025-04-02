@@ -1,5 +1,6 @@
 import { PayloadAction, buildCreateSlice, asyncThunkCreator } from "@reduxjs/toolkit";
 import { RequestConfiguration, State, Weather } from "../interfaces";
+import axios from "axios";
 const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
@@ -39,15 +40,17 @@ const dataSlice = createAppSlice({
                     q: city,
                     days: 3,
                 }
-    
-                const fullURL: string = configuration.url + "?key=" + configuration.key + "&q=" + configuration.q + "&days=" + configuration.days;
-    
-                const response = await fetch(fullURL);
-                if(!response.ok) return rejectWithValue("Server Error!");
-    
-                const data = await response.json();
-                            
-                return data;      
+                
+                try {
+                    const response = await axios.get<Weather>('http://api.weatherapi.com/v1/forecast.json', {
+                        params: configuration,
+                    });
+
+                    return response.data;
+
+                } catch (error) {
+                    throw rejectWithValue("Server Error!");    
+                }
             },
             {
                 pending: (state) => {
@@ -56,7 +59,7 @@ const dataSlice = createAppSlice({
                 },
                 rejected: (state, action) => {
                     state.isLoading = false;
-                    if (action.payload) state.error = action.payload;                    
+                    if (action.payload) state.error = action.payload;
                 },
                 fulfilled: (state, action) => {
                     state.isLoading = false;
