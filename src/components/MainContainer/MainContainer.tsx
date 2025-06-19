@@ -6,13 +6,15 @@ import { withSkeleton } from '../../scripts/hocs/withSkeleton';
 import { useFilter } from '../../scripts/hooks/useFilter';
 import { DayBlock, HourList } from '../../interfaces';
 import { useAppSelector } from '../../store/hooks';
-import { selectForecast, selectKindForecast } from '../../store/dataSlice';
+import { selectCity, selectKindForecast } from '../../store/Slices/dataSlice';
+import { useGetForecastQuery } from '../../store/Apis/forecastApi';
 
 
 const MainContainer: React.FC = () => {
     const kindForecast: number = useAppSelector(selectKindForecast);
-    const weatherData = useFilter(useAppSelector(selectForecast));    
-
+    const { data } = useGetForecastQuery(useAppSelector(selectCity));
+    const weatherData = useFilter(data);
+    
     return (
         <main className={ styles.main }>
             <div className={ styles.inner }>
@@ -27,7 +29,7 @@ const MainContainer: React.FC = () => {
 
             </div>
         </main>
-    )
+    );
 }
 
 export const MainContainerWithSkeleton = withSkeleton(MainContainer);

@@ -46,6 +46,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+.no-scroll {
+	overflow: hidden;
+}
+.yes-scroll {
+	overflow: visible;
+}
 * {
     box-sizing: border-box;
     font-family: PTRoot, SansSerif, sans-serif;
