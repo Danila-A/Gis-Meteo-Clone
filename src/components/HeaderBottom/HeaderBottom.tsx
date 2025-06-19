@@ -6,10 +6,12 @@ import { MobileMenu } from '../MobileMenu/MobileMenu';
 import styles from './HeaderBottom.module.scss';
 
 export const HeaderBottom: React.FC = () => {
-    const [isVisible, setIsVisible] = useState(false);   
+    const [isVisible, setIsVisible] = useState(false);
+    const body = document.querySelector<HTMLBodyElement>('body');
     
     const handleClick = () => {
         setIsVisible(!isVisible);
+        if(body) body.classList = 'no-scroll';
     }
 
     return (
