@@ -8,7 +8,7 @@ My project is created by the **React.js** library.
 To avoid the numerous errors of data processing I use **TypeScript**.
 I store global data using **Redux Toolkit** library.
 In this project I get weather data using **Weather API**.
-I sent http requests via **Axios** library.
+I sent http requests via **RTK Query** library.
 
 
 
@@ -21,7 +21,7 @@ The forecast is provided until 3 days.
 - [TypeScript](https://www.typescriptlang.org/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [Weather API](https://www.weatherapi.com)
-- [axios](https://axios-http.com/ru/docs/intro)
+- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
 
 
 ## How to install
