@@ -1,30 +1,33 @@
 import styles from './HeaderSearch.module.scss';
 import { Search } from "../Search/Search";
 import { FormEvent, useEffect, useRef, useState } from 'react';
-import { fetchForecast } from '../../store/dataSlice';
 import { useAppDispatch } from '../../store/hooks';
+import { setCity } from '../../store/Slices/dataSlice';
 
 
 export const HeaderSearch: React.FC = () => {
     const [isFocus, setIsFocus] = useState(false);
     const searchRef = useRef<HTMLInputElement>(null);   
     const dispatch = useAppDispatch();  
-    const body = document.querySelector<HTMLBodyElement>('body')!;
+    const body = document.querySelector<HTMLBodyElement>('body');
 
     useEffect(()=> {
         const handler = (event: Event) => {
             if(searchRef.current != event.target) {
-                body.style.overflow = 'visible';              
-                setIsFocus(false);
+                setIsFocus(prev => {
+                    if(!prev) return prev;
+                    if(body) body.classList = 'yes-scroll';
+                    return false;
+                });
             }
         }
         
         document.addEventListener('click', handler);
-    }, [searchRef])
+    }, [searchRef]);
 
     const handleOnFocus = () => {
         setIsFocus(true);
-        body.style.overflow = 'hidden';
+        if(body) body.classList = 'no-scroll';
     }  
 
     const handleSubmit = (event: FormEvent) => {
@@ -36,8 +39,8 @@ export const HeaderSearch: React.FC = () => {
             
             searchRef.current.value = '';
             searchRef.current.blur();
-            body.style.overflow = 'visible'; 
-            city && city.trim() ? dispatch(fetchForecast(city)) : null;
+            if(body) body.classList = 'yes-scroll';
+            city && city.trim() ? dispatch(setCity(city)) : null;
         }        
     }
 

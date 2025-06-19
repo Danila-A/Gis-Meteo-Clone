@@ -6,8 +6,11 @@ interface Props {
 }
 
 export const CloseIcon: React.FC<Props> = ({ setIsVisible }) => {
+  const body = document.querySelector<HTMLBodyElement>('body');
+
   const handleClick = () => {
     setIsVisible(false);
+    if(body) body.classList = 'yes-scroll';
   }
 
   return (
@@ -21,5 +24,5 @@ export const CloseIcon: React.FC<Props> = ({ setIsVisible }) => {
         alt="close icon" 
       />
     </div>
-  )
+  );
 }

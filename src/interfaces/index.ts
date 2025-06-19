@@ -163,13 +163,5 @@ export type DayHours = HourList & { date: React.ReactElement };
 
 export interface State {
     kindForecast: number;
-    isLoading: boolean;
-    forecast: Weather | null,
-    error: null | string,
-}
-
-export interface RequestConfiguration {
-    key: string;
-    q: string;
-    days: number;
+    city: string;
 }
